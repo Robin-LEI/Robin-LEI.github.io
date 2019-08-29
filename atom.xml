@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Robin LEI</title>
   
-  
+  <subtitle>用代码改变世界，因为喜欢所以热爱!</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-25T13:57:19.932Z</updated>
+  <updated>2019-08-29T13:43:06.803Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>yarn</title>
+    <link href="http://yoursite.com/2019/08/29/yarn/"/>
+    <id>http://yoursite.com/2019/08/29/yarn/</id>
+    <published>2019-08-29T13:39:30.000Z</published>
+    <updated>2019-08-29T13:43:06.803Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="带着问题学yarn？"><a href="#带着问题学yarn？" class="headerlink" title="带着问题学yarn？"></a>带着问题学yarn？</h3><ul><li>yarn是什么？</li><li>yarn有什么优点？</li><li>yarn可以做什么？</li><li>什么是一个package？</li><li>什么是一个包管理器？</li><li>公共包仓库是什么？</li><li>为什么需要包管理器？</li></ul><ol><li>package会进行缓存</li></ol><ul><li><p>npm i yarn -g</p></li><li><p>yarn -V</p></li><li><p>yarn init // 初始化一个package.json包</p></li><li><p>yarn add </p></li><li><p>yarn.lock // 存放各种包的信息</p></li><li><p>yarn upgrade webpack // 升级包</p></li><li><p>yarn cache ls // 查看本地安装了哪些缓存包</p></li><li><p>yarn cache dir // 查看package装在了本地什么路径</p></li><li><p>yarn cache clean // 清空本地缓存包</p></li><li><p>yarn add 已经缓存在本地的包 –offline // 离线安装</p></li><li><p>yarn install / yarn i / yarn // 安装项目依赖</p></li><li><p>dependences // 代码真正需要在浏览器上跑起来需要的一些依赖</p></li><li><p>devDependencies // 开发时需要的依赖</p></li><li><p>yarn remove [package] // 删除包</p></li><li><p>yarn install –production(prod) // 不会安装在devDependencies</p></li><li><p>yarn publish // publish a package to a package manager, the same as npm publish</p></li><li><p>yarn config</p></li><li><p>yarn config set registry registry.npm.taobao.org // 设置yarn安装源，提升安装包的时候的速度</p></li><li><p>yarn info [package] // 查看包的信息，可以时远程的包</p></li><li><p>yarn global add webpack // 把webpack安装在全局</p></li><li><p>yarn 不推荐把依赖包安装在全局，不清晰，在其他机器很难保证项目可以正确运行，放在package.json更加清晰明确</p></li><li><p>yarn self-upate // yarn的自我更新</p></li><li><p>yarn why [package] // 帮助寻找项目依赖,告诉我们为什么需要依赖</p></li><li><p>yarn check // 检查包的完整性</p></li><li><p>yarn run</p></li><li><p>example：create-dir：mkdir demo</p></li><li><p>rm-dir：rm -rf demo</p></li><li><p>yarn global ls // 查看全局安装的包</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;带着问题学yarn？&quot;&gt;&lt;a href=&quot;#带着问题学yarn？&quot; class=&quot;headerlink&quot; title=&quot;带着问题学yarn？&quot;&gt;&lt;/a&gt;带着问题学yarn？&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;yarn是什么？&lt;/li&gt;
+&lt;li&gt;yarn有什么优点？&lt;/li
+      
+    
+    </summary>
+    
+    
+      <category term="包管理工具" scheme="http://yoursite.com/tags/%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>dart</title>
     <link href="http://yoursite.com/2019/08/25/dart/"/>
     <id>http://yoursite.com/2019/08/25/dart/</id>
     <published>2019-08-25T13:57:11.000Z</published>
-    <updated>2019-08-25T13:57:19.932Z</updated>
+    <updated>2019-08-29T13:44:24.065Z</updated>
     
     <content type="html"><![CDATA[<h3 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h3><ol><li><a href="http://www.gekorm.com/dart-windows/" target="_blank" rel="noopener">http://www.gekorm.com/dart-windows/</a> 安装dart sdk</li><li>vscode开发</li><li>vscode 安装dart、code runner扩展插件</li><li>Google开发</li><li>被flutter带火</li><li>2011年诞生</li></ol><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><ol><li>dart是一个强大的脚本语言</li><li>定义变量不指定类型，会自动推断，不能赋与其推断类型不一致的类型</li><li>String</li><li>int</li><li>dart存在类型校验</li></ol><h3 id="变量命名规则"><a href="#变量命名规则" class="headerlink" title="变量命名规则"></a>变量命名规则</h3><ol><li>字母、数字、下划线、$组成</li><li>区分大小写</li><li>不能以数字开头</li></ol><h3 id="dart常量"><a href="#dart常量" class="headerlink" title="dart常量"></a>dart常量</h3><ol><li>const 定义一个常量，编译时常量，一旦赋值不能修改</li><li>final 同样也是定义一个常量，但是比const强大，运行时常量，且属于惰性赋值</li></ol><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ol><li>三单(双)引号定义字符串，可以换行写字符串，单双引号则不行，只能写单行字符串</li><li>字符串拼接 $ +</li><li>String</li><li>int</li><li>bool</li><li>[]</li><li>new List(),add,下标从0开始，集合类型</li><li>new List<string>()</string></li><li>对象属性必须加引号</li><li>new Map()[“name”] = ‘hello wolrd’</li><li>is 类型判断</li></ol><h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><ol><li>??, example: b??=20 // 如果b为空的话就把20赋值给b</li></ol><h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><ol><li>Number to String，toString()</li><li>String to Number，int.parse(str),double.parse()</li><li>try{}catch(err){}</li><li>string.isEmpty() // 判断字符串是否为空</li><li>number.isNaN()</li></ol><h3 id="集合类型"><a href="#集合类型" class="headerlink" title="集合类型"></a>集合类型</h3><ul><li>List<ul><li>List list = []</li><li>length</li><li>isEmpty</li><li>isNotEmpty</li><li>reversed // 逆转</li><li>toList() // 转为List集合</li><li>add() // 相当于push，一次加一个</li><li>addAll([‘test’, ‘hello’]) // 拼接数组</li><li>indexOf // 获取索引值，查不到返回-1</li><li>remove(value)</li><li>removeAt(index)</li><li>fillRange()</li><li>insert()</li><li>insertAll(1, [‘hello’, ‘world’])</li><li>join() // 转为字符串</li><li>split() // 字符串转为List数组</li></ul></li><li>Set<ul><li>去重</li><li>new Set()</li><li>add()</li></ul></li></ul><h3 id="函数与方法"><a href="#函数与方法" class="headerlink" title="函数与方法"></a>函数与方法</h3><ol><li>首字母小写，小驼峰</li><li>返回值类型 函数名() {函数体; return 返回值}</li><li>定义一个带可选参数的方法，String print(String username, [int age, String sex])</li><li>return “姓名:$username—年龄:$age”</li><li>定义一个命名参数的方法：String test(String name, {int age, String sex = ‘male’})</li></ol><h3 id="类与对象"><a href="#类与对象" class="headerlink" title="类与对象"></a>类与对象</h3><ol><li>OOP，面向对象的三个基本特征–封装、继承、多态</li><li>类由属性和方法组成</li><li>所有东西都是对象，都是继承自object</li><li>dart是一门使用类和单继承的面向对象，所有对象都是类的实例</li><li>构造方法/函数在程序一运行(实例化)的时候就会执行</li><li>dart里面构造函数可以写多个</li><li>Dart和其他面向OOP的语言不一样，没有public、private、protected这些访问修饰符，但是我们可以使用 _ 定义私有的属性和方法，然后还得抽离成一个文件才会生效</li><li>num</li><li>get 方法名 // 计算属性</li><li>set 方法名(value)</li></ol><h3 id="dart的抽象类"><a href="#dart的抽象类" class="headerlink" title="dart的抽象类"></a>dart的抽象类</h3><ol><li>定义一个Animal类，并且要求他的子类必须实现他的eat方法</li><li>抽象类是一个标准，对子类的一个约束</li><li>抽象类有多个方法时子类必须要全部实现</li><li>抽象类里面可以有普通方法</li><li>抽象类不能直接实例化</li></ol><h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><ol><li>父类定义一个方法不去实现，让继承他的子类去实现它，每一个子类有不同的表现</li><li>官方表态：允许将子类类型的指针赋值给父类类型的指针，同一个函数的调用会有不同的执行效果，也就是说子类的实例赋值给父类的引用</li></ol><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><ol><li>dart中没有interface关键字</li><li>抽象类会被作为接口被实现</li><li>定义一个DB库 支持mysql mongodb mssql，这三个类中都有同样的方法</li><li>接口就是约定，一种规范</li><li>通过implements</li></ol><h3 id="一个类实现多个接口"><a href="#一个类实现多个接口" class="headerlink" title="一个类实现多个接口"></a>一个类实现多个接口</h3><ol><li>implements， 逗号隔开类名</li><li>实现所有方法和属性</li></ol><h3 id="mixins-新特性"><a href="#mixins-新特性" class="headerlink" title="mixins 新特性"></a>mixins 新特性</h3><ol><li>with</li><li>和继承有点相似</li><li>作为mixins的类只能继承自Object，不能继承其他类</li><li>作为mixins的类不能有构造函数</li><li>mixins的类型就是其超类的子类型</li></ol><h3 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h3><ol><li>传入什么类型，返回什么类型</li><li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">T getData&lt;T&gt;(T value) &#123;</span><br><span class="line">  return value</span><br><span class="line">&#125;</span><br><span class="line">getData&lt;String&gt;(&apos;tet&apos;) // String给了T</span><br><span class="line">// 下面这种写法就不会对返回值类型进行校验</span><br><span class="line">getData&lt;T&gt;(T value) &#123;</span><br><span class="line">  return value</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><h3 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h3><ol><li>demo<ul><li>实现数据缓存的功能：有文件缓存、内存缓存、</li><li>定义一个泛型接口。约束实现他的子类必须有geyByKey(key)和setByKey(key, value)</li><li>要求setByKey的时候value的类型和实例化子类的时候指定的类型一致</li></ul></li><li>解决代码重用</li></ol><h3 id="库"><a href="#库" class="headerlink" title="库"></a>库</h3><ol><li>自定义</li><li>内置<ul><li>import ‘dart:io’</li><li>import ‘dart:math’</li></ul></li><li>pub</li><li>async是让方法变成异步</li><li>await是等待异步方法执行完成</li><li>从下面网站中找到我们想要的库：</li></ol><ul><li><a href="https://pub.dev/packages" target="_blank" rel="noopener">https://pub.dev/packages</a></li><li><a href="https://pub.flutter-io.cn/packages" target="_blank" rel="noopener">https://pub.flutter-io.cn/packages</a></li><li><a href="https://pub.dartlang.org/flutter/" target="_blank" rel="noopener">https://pub.dartlang.org/flutter/</a></li></ul><ol start="7"><li>pubspec.lock</li><li>pub get // 安装依赖</li><li>import ‘’ show getAge; // 从库中只引入getAge方法</li><li>import ‘’ as xxx; // 起个别名，解决冲突</li><li>import ‘’ hide getName; // 隐藏getName</li></ol>]]></content>
     
@@ -35,6 +60,8 @@
     
     </summary>
     
+    
+      <category term="like C" scheme="http://yoursite.com/tags/like-C/"/>
     
   </entry>
   
