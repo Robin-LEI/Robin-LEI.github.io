@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-01T07:38:59.854Z</updated>
+  <updated>2019-09-01T08:21:43.719Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>encrypt</title>
+    <link href="http://yoursite.com/2019/09/01/encrypt/"/>
+    <id>http://yoursite.com/2019/09/01/encrypt/</id>
+    <published>2019-09-01T08:10:05.000Z</published>
+    <updated>2019-09-01T08:21:43.719Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="常见的前端加密库"><a href="#常见的前端加密库" class="headerlink" title="常见的前端加密库"></a>常见的前端加密库</h3><ol><li><a href="https://github.com/brix/crypto-js" target="_blank" rel="noopener">crypto-js</a></li><li><a href="https://github.com/bitwiseshiftleft/sjcl" target="_blank" rel="noopener">sjcl</a></li><li><a href="https://blog-static.cnblogs.com/files/mofish/md5.js" target="_blank" rel="noopener">md5</a></li><li><a href="https://blog-static.cnblogs.com/files/mofish/sha1.js" target="_blank" rel="noopener">sha1哈希加密</a></li><li><a href="https://github.com/beatgammit/base64-js" target="_blank" rel="noopener">base64</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;常见的前端加密库&quot;&gt;&lt;a href=&quot;#常见的前端加密库&quot; class=&quot;headerlink&quot; title=&quot;常见的前端加密库&quot;&gt;&lt;/a&gt;常见的前端加密库&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/brix/crypto-
+      
+    
+    </summary>
+    
+    
+      <category term="前端加密" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF%E5%8A%A0%E5%AF%86/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>canvas</title>
