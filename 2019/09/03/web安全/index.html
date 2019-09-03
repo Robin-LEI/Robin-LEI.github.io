@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="web安全">
-    <meta name="description" content="常见web攻击方式 XSS-反射型   跨站脚本攻击 反射型xss(恶意的url)，一次性的，由用户发起 chrome内置了一些xss过滤器，可以防止大部分反射型xss攻击 firefox安全性不如chrome 特点：用户手动触发，危害小，不持久   存储型   黑客将恶意脚本代码上传(比如通过评论，存入到对方服务器) 当客户端重新使用数据时，服务器会返回恶意代码，再次执行 特点时持久，不需要用户">
+    <meta name="description" content="常见web攻击方式 XSS-反射型   跨站脚本攻击 反射型xss(恶意的url)，一次性的，由用户发起 chrome内置了一些xss过滤器，可以防止大部分反射型xss攻击 firefox安全性不如chrome 特点：用户手动触发，危害小，不持久   XSS-存储型   黑客将恶意脚本代码上传(比如通过评论，存入到对方服务器) 当客户端重新使用数据时，服务器会返回恶意代码，再次执行 特点时持久，不">
 <meta name="keywords" content="web安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="web安全">
 <meta property="og:url" content="http://yoursite.com/2019/09/03/web安全/index.html">
 <meta property="og:site_name" content="Robin LEI">
-<meta property="og:description" content="常见web攻击方式 XSS-反射型   跨站脚本攻击 反射型xss(恶意的url)，一次性的，由用户发起 chrome内置了一些xss过滤器，可以防止大部分反射型xss攻击 firefox安全性不如chrome 特点：用户手动触发，危害小，不持久   存储型   黑客将恶意脚本代码上传(比如通过评论，存入到对方服务器) 当客户端重新使用数据时，服务器会返回恶意代码，再次执行 特点时持久，不需要用户">
+<meta property="og:description" content="常见web攻击方式 XSS-反射型   跨站脚本攻击 反射型xss(恶意的url)，一次性的，由用户发起 chrome内置了一些xss过滤器，可以防止大部分反射型xss攻击 firefox安全性不如chrome 特点：用户手动触发，危害小，不持久   XSS-存储型   黑客将恶意脚本代码上传(比如通过评论，存入到对方服务器) 当客户端重新使用数据时，服务器会返回恶意代码，再次执行 特点时持久，不">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-03T13:52:24.409Z">
+<meta property="og:updated_time" content="2019-09-03T15:55:38.836Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web安全">
-<meta name="twitter:description" content="常见web攻击方式 XSS-反射型   跨站脚本攻击 反射型xss(恶意的url)，一次性的，由用户发起 chrome内置了一些xss过滤器，可以防止大部分反射型xss攻击 firefox安全性不如chrome 特点：用户手动触发，危害小，不持久   存储型   黑客将恶意脚本代码上传(比如通过评论，存入到对方服务器) 当客户端重新使用数据时，服务器会返回恶意代码，再次执行 特点时持久，不需要用户">
+<meta name="twitter:description" content="常见web攻击方式 XSS-反射型   跨站脚本攻击 反射型xss(恶意的url)，一次性的，由用户发起 chrome内置了一些xss过滤器，可以防止大部分反射型xss攻击 firefox安全性不如chrome 特点：用户手动触发，危害小，不持久   XSS-存储型   黑客将恶意脚本代码上传(比如通过评论，存入到对方服务器) 当客户端重新使用数据时，服务器会返回恶意代码，再次执行 特点时持久，不">
     
         <link rel="alternate" type="application/atom+xml" title="Robin LEI" href="/atom.xml">
     
@@ -158,7 +158,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常见web攻击方式"><span class="post-toc-number">1.</span> <span class="post-toc-text">常见web攻击方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#payload"><span class="post-toc-number">2.</span> <span class="post-toc-text">payload</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何防御xss"><span class="post-toc-number">3.</span> <span class="post-toc-text">如何防御xss</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#URL编码"><span class="post-toc-number">4.</span> <span class="post-toc-text">URL编码</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常见web攻击方式"><span class="post-toc-number">1.</span> <span class="post-toc-text">常见web攻击方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#payload"><span class="post-toc-number">2.</span> <span class="post-toc-text">payload</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何防御xss"><span class="post-toc-number">3.</span> <span class="post-toc-text">如何防御xss</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#URL编码"><span class="post-toc-number">4.</span> <span class="post-toc-text">URL编码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CSRF-跨站请求伪造"><span class="post-toc-number">5.</span> <span class="post-toc-text">CSRF 跨站请求伪造</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#防御CSRF"><span class="post-toc-number">6.</span> <span class="post-toc-text">防御CSRF</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#token"><span class="post-toc-number">7.</span> <span class="post-toc-text">token</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#XSS-CSRF-蠕虫"><span class="post-toc-number">8.</span> <span class="post-toc-text">XSS+CSRF=蠕虫</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DDOS攻击"><span class="post-toc-number">9.</span> <span class="post-toc-text">DDOS攻击</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#防止DDOS"><span class="post-toc-number">10.</span> <span class="post-toc-text">防止DDOS</span></a></li></ol>
         </nav>
     </aside>
 
@@ -189,7 +189,7 @@
 <li>特点：用户手动触发，危害小，不持久</li>
 </ul>
 <ol start="2">
-<li>存储型</li>
+<li>XSS-存储型</li>
 </ol>
 <ul>
 <li>黑客将恶意脚本代码上传(比如通过评论，存入到对方服务器)</li>
@@ -197,7 +197,7 @@
 <li>特点时持久，不需要用户触发，危害更大</li>
 </ul>
 <ol start="3">
-<li>DOM-base xss</li>
+<li>DOM-base XSS</li>
 </ol>
 <ul>
 <li>用户打开一个恶意的链接</li>
@@ -227,6 +227,33 @@
 <li>encodeURIComponent用来编码传递参数的以及&amp;特殊符号</li>
 <li>对一个get url的参数处理往往是二者一起使用</li>
 </ol>
+<h3 id="CSRF-跨站请求伪造"><a href="#CSRF-跨站请求伪造" class="headerlink" title="CSRF 跨站请求伪造"></a>CSRF 跨站请求伪造</h3><ol>
+<li>用户A登陆银行网站，登陆成功后拿到cookie</li>
+<li>黑客诱导A登陆他的钓鱼网站</li>
+<li>在钓鱼网站的内部内置了一个iframe，设置width、height分别为0，链接到一个transfer页面</li>
+<li>transfer页面模拟用户A发请求转账到指定账户，因为这时候因为A并没有成功退出，所以他的cookie仍然有效，可以作为登陆凭证</li>
+</ol>
+<h3 id="防御CSRF"><a href="#防御CSRF" class="headerlink" title="防御CSRF"></a>防御CSRF</h3><ol>
+<li>svg-captcha // nodejs生成验证码</li>
+<li>给用户一个验证码，但是影响用户体验</li>
+<li>通过请求头referer判断是否是自己的站点，不可靠</li>
+<li>参数伪造token，最主流的防御CSRF</li>
+</ol>
+<h3 id="token"><a href="#token" class="headerlink" title="token"></a>token</h3><ol>
+<li>一次性的</li>
+<li>用户不知情</li>
+</ol>
+<h3 id="XSS-CSRF-蠕虫"><a href="#XSS-CSRF-蠕虫" class="headerlink" title="XSS+CSRF=蠕虫"></a>XSS+CSRF=蠕虫</h3><h3 id="DDOS攻击"><a href="#DDOS攻击" class="headerlink" title="DDOS攻击"></a>DDOS攻击</h3><ol>
+<li>分布式拒绝服务</li>
+<li>黑客控制大量肉鸡向目标主机发送非正常请求，导致其消耗资源不能为合法用户的访问提供正常服务</li>
+</ol>
+<h3 id="防止DDOS"><a href="#防止DDOS" class="headerlink" title="防止DDOS"></a>防止DDOS</h3><ol>
+<li>验证码</li>
+<li>限制一个IP请求频率</li>
+<li>增加机器增加服务器带宽</li>
+<li>设置自己的业务为分布式服务，防止单点攻击</li>
+<li>提高服务器负载能力</li>
+</ol>
 
         </div>
 
@@ -235,7 +262,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-09-03T13:52:24.409Z" itemprop="dateUpdated">2019-09-03 21:52:24</time>
+    Last updated: <time datetime="2019-09-03T15:55:38.836Z" itemprop="dateUpdated">2019-09-03 23:55:38</time>
 </span><br>
 
 
