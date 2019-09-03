@@ -14,25 +14,25 @@
     
     
     
-    <title>encrypt | Robin LEI | 用代码改变世界，因为喜欢所以热爱!</title>
+    <title>web安全 | Robin LEI | 用代码改变世界，因为喜欢所以热爱!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="前端加密,JavaScript">
-    <meta name="description" content="常见的前端加密库 crypto-js sjcl md5 sha1哈希加密 base64">
-<meta name="keywords" content="前端加密,JavaScript">
+    <meta name="keywords" content="web安全">
+    <meta name="description" content="常见web攻击方式 XSS-反射型   跨站脚本攻击 反射型xss(恶意的url)，一次性的，由用户发起 chrome内置了一些xss过滤器，可以防止大部分反射型xss攻击 firefox安全性不如chrome 特点：用户手动触发，危害小，不持久   存储型   黑客将恶意脚本代码上传(比如通过评论，存入到对方服务器) 当客户端重新使用数据时，服务器会返回恶意代码，再次执行 特点时持久，不需要用户">
+<meta name="keywords" content="web安全">
 <meta property="og:type" content="article">
-<meta property="og:title" content="encrypt">
-<meta property="og:url" content="http://yoursite.com/2019/09/01/encrypt/index.html">
+<meta property="og:title" content="web安全">
+<meta property="og:url" content="http://yoursite.com/2019/09/03/web安全/index.html">
 <meta property="og:site_name" content="Robin LEI">
-<meta property="og:description" content="常见的前端加密库 crypto-js sjcl md5 sha1哈希加密 base64">
+<meta property="og:description" content="常见web攻击方式 XSS-反射型   跨站脚本攻击 反射型xss(恶意的url)，一次性的，由用户发起 chrome内置了一些xss过滤器，可以防止大部分反射型xss攻击 firefox安全性不如chrome 特点：用户手动触发，危害小，不持久   存储型   黑客将恶意脚本代码上传(比如通过评论，存入到对方服务器) 当客户端重新使用数据时，服务器会返回恶意代码，再次执行 特点时持久，不需要用户">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-01T08:21:43.719Z">
+<meta property="og:updated_time" content="2019-09-03T13:52:24.409Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="encrypt">
-<meta name="twitter:description" content="常见的前端加密库 crypto-js sjcl md5 sha1哈希加密 base64">
+<meta name="twitter:title" content="web安全">
+<meta name="twitter:description" content="常见web攻击方式 XSS-反射型   跨站脚本攻击 反射型xss(恶意的url)，一次性的，由用户发起 chrome内置了一些xss过滤器，可以防止大部分反射型xss攻击 firefox安全性不如chrome 特点：用户手动触发，危害小，不持久   存储型   黑客将恶意脚本代码上传(比如通过评论，存入到对方服务器) 当客户端重新使用数据时，服务器会返回恶意代码，再次执行 特点时持久，不需要用户">
     
         <link rel="alternate" type="application/atom+xml" title="Robin LEI" href="/atom.xml">
     
@@ -113,7 +113,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">encrypt</div>
+        <div class="flex-col header-title ellipsis">web安全</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -135,11 +135,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">encrypt</h1>
+        <h1 class="title">web安全</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-09-01T08:10:05.000Z" itemprop="datePublished" class="page-time">
-  2019-09-01
+                <time datetime="2019-09-03T13:51:12.000Z" itemprop="datePublished" class="page-time">
+  2019-09-03
 </time>
 
 
@@ -158,18 +158,18 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常见的前端加密库"><span class="post-toc-number">1.</span> <span class="post-toc-text">常见的前端加密库</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常见web攻击方式"><span class="post-toc-number">1.</span> <span class="post-toc-text">常见web攻击方式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#payload"><span class="post-toc-number">2.</span> <span class="post-toc-text">payload</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何防御xss"><span class="post-toc-number">3.</span> <span class="post-toc-text">如何防御xss</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#URL编码"><span class="post-toc-number">4.</span> <span class="post-toc-text">URL编码</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-encrypt"
+<article id="post-web安全"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">encrypt</h1>
+        <h1 class="post-card-title">web安全</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-09-01 16:10:05" datetime="2019-09-01T08:10:05.000Z"  itemprop="datePublished">2019-09-01</time>
+            <time class="post-time" title="2019-09-03 21:51:12" datetime="2019-09-03T13:51:12.000Z"  itemprop="datePublished">2019-09-03</time>
 
             
 
@@ -178,12 +178,54 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="常见的前端加密库"><a href="#常见的前端加密库" class="headerlink" title="常见的前端加密库"></a>常见的前端加密库</h3><ol>
-<li><a href="https://github.com/brix/crypto-js" target="_blank" rel="noopener">crypto-js</a></li>
-<li><a href="https://github.com/bitwiseshiftleft/sjcl" target="_blank" rel="noopener">sjcl</a></li>
-<li><a href="https://blog-static.cnblogs.com/files/mofish/md5.js" target="_blank" rel="noopener">md5</a></li>
-<li><a href="https://blog-static.cnblogs.com/files/mofish/sha1.js" target="_blank" rel="noopener">sha1哈希加密</a></li>
-<li><a href="https://github.com/beatgammit/base64-js" target="_blank" rel="noopener">base64</a></li>
+            <h3 id="常见web攻击方式"><a href="#常见web攻击方式" class="headerlink" title="常见web攻击方式"></a>常见web攻击方式</h3><ol>
+<li>XSS-反射型</li>
+</ol>
+<ul>
+<li>跨站脚本攻击</li>
+<li>反射型xss(恶意的url)，一次性的，由用户发起</li>
+<li>chrome内置了一些xss过滤器，可以防止大部分反射型xss攻击</li>
+<li>firefox安全性不如chrome</li>
+<li>特点：用户手动触发，危害小，不持久</li>
+</ul>
+<ol start="2">
+<li>存储型</li>
+</ol>
+<ul>
+<li>黑客将恶意脚本代码上传(比如通过评论，存入到对方服务器)</li>
+<li>当客户端重新使用数据时，服务器会返回恶意代码，再次执行</li>
+<li>特点时持久，不需要用户触发，危害更大</li>
+</ul>
+<ol start="3">
+<li>DOM-base xss</li>
+</ol>
+<ul>
+<li>用户打开一个恶意的链接</li>
+<li>浏览器在dom解析的时候直接使用恶意数据</li>
+<li>innerHTML、document.write…</li>
+</ul>
+<h3 id="payload"><a href="#payload" class="headerlink" title="payload"></a>payload</h3><ul>
+<li>实现xss攻击的恶意脚本就叫做payload</li>
+<li>xss钓鱼–通过xss向网页注入钓鱼链接，引导用户访问</li>
+<li>通过payload拿到用户的sessionId后，就可以伪造成用户，进行操作</li>
+<li>因为sessionId是唯一标识–后台识别客户</li>
+<li>用户登陆后，后台会返回一个sessionId存储在客户端的cookie中</li>
+<li>以后客户端每次请求都会把该cookie带上请求后端</li>
+<li>所以cookie泄露会有很大风险</li>
+</ul>
+<h3 id="如何防御xss"><a href="#如何防御xss" class="headerlink" title="如何防御xss"></a>如何防御xss</h3><ol>
+<li>设置cookie的httpOnly属性</li>
+<li>这样在客户端就不能通过document.cookie获取到cookie</li>
+<li>但是不能根本解决</li>
+<li>永远不要相信前端的过滤，后台一定要进行过滤</li>
+<li>设置白名单</li>
+<li>设置黑名单</li>
+<li>在标签里面、在属性上、在url地址、在函数参数传参写入时再次进行一层htmlEncode过滤</li>
+</ol>
+<h3 id="URL编码"><a href="#URL编码" class="headerlink" title="URL编码"></a>URL编码</h3><ol>
+<li>encodeURI编码url的不对&amp;等保留字与特殊字符编码</li>
+<li>encodeURIComponent用来编码传递参数的以及&amp;特殊符号</li>
+<li>对一个get url的参数处理往往是二者一起使用</li>
 </ol>
 
         </div>
@@ -193,7 +235,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-09-01T08:21:43.719Z" itemprop="dateUpdated">2019-09-01 16:21:43</time>
+    Last updated: <time datetime="2019-09-03T13:52:24.409Z" itemprop="dateUpdated">2019-09-03 21:52:24</time>
 </span><br>
 
 
@@ -215,7 +257,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端加密/">前端加密</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web安全/">web安全</a></li></ul>
 
 
             
@@ -225,7 +267,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/09/01/encrypt/&title=《encrypt》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/09/03/web安全/&title=《web安全》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -235,22 +277,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/09/01/encrypt/&title=《encrypt》 — Robin LEI&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/09/03/web安全/&title=《web安全》 — Robin LEI&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/01/encrypt/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/03/web安全/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《encrypt》 — Robin LEI&url=http://yoursite.com/2019/09/01/encrypt/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《web安全》 — Robin LEI&url=http://yoursite.com/2019/09/03/web安全/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/09/01/encrypt/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/09/03/web安全/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -270,21 +312,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/09/03/web安全/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">web安全</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/09/01/canvas/" id="post-next" class="post-nav-link">
+      <a href="/2019/09/01/encrypt/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">canvas</h4>
+        <h4 class="title">encrypt</h4>
       </a>
     </div>
   
@@ -349,7 +384,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/09/01/encrypt/&title=《encrypt》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/09/03/web安全/&title=《web安全》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -359,22 +394,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/09/01/encrypt/&title=《encrypt》 — Robin LEI&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/09/03/web安全/&title=《web安全》 — Robin LEI&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/01/encrypt/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/03/web安全/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《encrypt》 — Robin LEI&url=http://yoursite.com/2019/09/01/encrypt/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《web安全》 — Robin LEI&url=http://yoursite.com/2019/09/03/web安全/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/09/01/encrypt/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/09/03/web安全/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -385,7 +420,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABvUlEQVR42u3aQW7DMAwEwPz/0ynQU4Gi7q5oqS4wOhlKYk0uBEXy9YrX+3N93/m6f/18vXPzwsXFHXPflys5/pqb/71rAy4u7nnudfD65RUxK//Oj/u4uLgP4659mvwKFxf3/3KTNGhOx8XFfQ63pSSJTl4W2XJXw8XFHXDbgumO5431XVxc3JL7Ltda+eO203FxcY9w50WNJE3JCytRmMPFxT3InRzfjla0AQ4XF/ckd1L4uGvMomjM4OLiHuHmac11eGqLp/nQRpGX4eLi3srNrytJM7V9QzvChYuLe5KbFy/aQDbpktRxERcXd8zNE5dJuXNeKMHFxT3JzVOWfFhqreRRFGhwcXE3c9thizY1yUsquLi4T+MmDY/82jNPjIrODy4u7gZu3gRNEpTkV2uXIlxc3JPc5Jj8sPaC1CZJuLi4J7l5WMmDXb5fVEdxcXEPcvM1H9VaC3xRBRcXF/cmbhtQkoZoO541GfvAxcXdx82DV3vtyd+z2BPGxcXdzM3TkduaImtTWLi4uA/jtkduGdrAxcV9JHdfYSUa+8DFxT3InR+wlhjVoRMXF/cId56sJAXTFoeLi/tH3A/z8QYcJgw2wQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABwElEQVR42u3aQYrDMAwF0Nz/0hmY1UBJ+mVFnhaeV8UJyUsXwvr2ccTj/B3J/N+Z82W8zh8TAxcXt809b8cV4h50f2fynMtPwsXF3ci9L1IJqzOfF0pcXNxP466tQ5Jn4uLifi83GQkaFxf3W7hJ85MveqqxyEivhouL2+BWA9OJ34P5Li4ubpF7FkfS5OQFqPx2XFzcLdxkozRZslQDkepGS2FfFxcX9yHuWmyatC7Vd+V/Ci4u7hy3enBqIv5ImqLLFRkuLu4YNy9S/Y3SVhOFi4u7hdtvbKolKS9nb9C4uLjD3LXDE9V4dC08LZ/5wsXFbXM77U3ykU8FJbi4uDu5HWJe+KqLmDdLH1xc3GHuWlSa3/9wQ4WLi/sB3Oq2Rx5zVENSXFzcndxO0ckDkWoRLASmuLi4A9ykSOWlrfMB0QEOXFzcjdx8c7TaulTLVlTIcHFxt3Dz0V+4dMofLi7uHm61oKwd2sjp+VVcXNxp7lpIWm2K8kL2prTh4uJu5ObLkbWN0sUKiouL+/HcZ5+8GL/i4uJ+Cbd6MCufx8XF/V9u5wVJqepEIYuxCC4uboPbCUyfaoTyMAUXF3eY+wPzJU3U3i05zAAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
