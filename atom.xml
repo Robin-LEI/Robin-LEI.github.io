@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-03T15:55:38.836Z</updated>
+  <updated>2019-09-13T02:10:20.644Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nuxt</title>
+    <link href="http://yoursite.com/2019/09/13/nuxt/"/>
+    <id>http://yoursite.com/2019/09/13/nuxt/</id>
+    <published>2019-09-13T02:04:25.000Z</published>
+    <updated>2019-09-13T02:10:20.644Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><ol><li>一个通用的vue框架</li><li>常用来做ssr</li><li>ssr：在服务器端把vue的文件直接渲染为html返回给浏览器</li><li>对seo支持的非常好，比spa打开速度快一点</li><li>spa对seo是不友好的</li><li>新闻、博客、电影(需要搜索引擎提供流量的这种站点)这种网站必须要用ssr</li></ol><h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><ol><li>npx create-nuxt-app projectName</li><li>npm run dev 开启项目</li></ol><h3 id="目录结构和配置文件"><a href="#目录结构和配置文件" class="headerlink" title="目录结构和配置文件"></a>目录结构和配置文件</h3><h3 id="基本标签"><a href="#基本标签" class="headerlink" title="基本标签"></a>基本标签</h3><ol><li>nuxt-link</li><li>_是动态路由的标志</li></ol><h3 id="默认模板"><a href="#默认模板" class="headerlink" title="默认模板"></a>默认模板</h3><ol><li>app.html</li><li>这样在每一个页面上都会引入app.html的内容</li></ol><h3 id="默认布局"><a href="#默认布局" class="headerlink" title="默认布局"></a>默认布局</h3><h3 id="异步请求"><a href="#异步请求" class="headerlink" title="异步请求"></a>异步请求</h3><ol><li>asyncData</li><li>asyncData() {<br>return axios.get(url).then(res =&gt; {info: res.data}) // 自动把info写入到data中<br>}</li><li>async asyncData() {<br>let {data} = await axios get(url)<br>return {info: data}<br>}</li></ol><h3 id="静态资源文件引用和打包生产"><a href="#静态资源文件引用和打包生产" class="headerlink" title="静态资源文件引用和打包生产"></a>静态资源文件引用和打包生产</h3><ol><li>~</li><li>npm run generate // 打包</li><li>安装npm i -g live-server</li><li>输入live-server启动</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;一个通用的vue框架&lt;/li&gt;
+&lt;li&gt;常用来做ssr&lt;/li&gt;
+&lt;li&gt;ssr：在服务器端把vue的文件直接渲染为html返回
+      
+    
+    </summary>
+    
+    
+      <category term="nuxt" scheme="http://yoursite.com/tags/nuxt/"/>
+    
+      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>web安全</title>

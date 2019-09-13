@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>nuxt | Robin LEI | 用代码改变世界，因为喜欢所以热爱!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="nuxt,vue">
+    <meta name="description" content="背景 一个通用的vue框架 常用来做ssr ssr：在服务器端把vue的文件直接渲染为html返回给浏览器 对seo支持的非常好，比spa打开速度快一点 spa对seo是不友好的 新闻、博客、电影(需要搜索引擎提供流量的这种站点)这种网站必须要用ssr  环境配置 npx create-nuxt-app projectName npm run dev 开启项目  目录结构和配置文件基本标签 nux">
+<meta name="keywords" content="nuxt,vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nuxt">
+<meta property="og:url" content="http://yoursite.com/2019/09/13/nuxt/index.html">
+<meta property="og:site_name" content="Robin LEI">
+<meta property="og:description" content="背景 一个通用的vue框架 常用来做ssr ssr：在服务器端把vue的文件直接渲染为html返回给浏览器 对seo支持的非常好，比spa打开速度快一点 spa对seo是不友好的 新闻、博客、电影(需要搜索引擎提供流量的这种站点)这种网站必须要用ssr  环境配置 npx create-nuxt-app projectName npm run dev 开启项目  目录结构和配置文件基本标签 nux">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-13T02:10:20.644Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nuxt">
+<meta name="twitter:description" content="背景 一个通用的vue框架 常用来做ssr ssr：在服务器端把vue的文件直接渲染为html返回给浏览器 对seo支持的非常好，比spa打开速度快一点 spa对seo是不友好的 新闻、博客、电影(需要搜索引擎提供流量的这种站点)这种网站必须要用ssr  环境配置 npx create-nuxt-app projectName npm run dev 开启项目  目录结构和配置文件基本标签 nux">
+    
+        <link rel="alternate" type="application/atom+xml" title="Robin LEI" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Robin LEI</h5>
+          <a href="mailto:13661603945@163.com" title="13661603945@163.com" class="mail">13661603945@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HomePage
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Robin-LEI" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://blog.csdn.net/weixin_42259266"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">nuxt</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">nuxt</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-09-13T02:04:25.000Z" itemprop="datePublished" class="page-time">
+  2019-09-13
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#背景"><span class="post-toc-number">1.</span> <span class="post-toc-text">背景</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#环境配置"><span class="post-toc-number">2.</span> <span class="post-toc-text">环境配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#目录结构和配置文件"><span class="post-toc-number">3.</span> <span class="post-toc-text">目录结构和配置文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本标签"><span class="post-toc-number">4.</span> <span class="post-toc-text">基本标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#默认模板"><span class="post-toc-number">5.</span> <span class="post-toc-text">默认模板</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#默认布局"><span class="post-toc-number">6.</span> <span class="post-toc-text">默认布局</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#异步请求"><span class="post-toc-number">7.</span> <span class="post-toc-text">异步请求</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#静态资源文件引用和打包生产"><span class="post-toc-number">8.</span> <span class="post-toc-text">静态资源文件引用和打包生产</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-nuxt"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">nuxt</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-09-13 10:04:25" datetime="2019-09-13T02:04:25.000Z"  itemprop="datePublished">2019-09-13</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><ol>
+<li>一个通用的vue框架</li>
+<li>常用来做ssr</li>
+<li>ssr：在服务器端把vue的文件直接渲染为html返回给浏览器</li>
+<li>对seo支持的非常好，比spa打开速度快一点</li>
+<li>spa对seo是不友好的</li>
+<li>新闻、博客、电影(需要搜索引擎提供流量的这种站点)这种网站必须要用ssr</li>
+</ol>
+<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><ol>
+<li>npx create-nuxt-app projectName</li>
+<li>npm run dev 开启项目</li>
+</ol>
+<h3 id="目录结构和配置文件"><a href="#目录结构和配置文件" class="headerlink" title="目录结构和配置文件"></a>目录结构和配置文件</h3><h3 id="基本标签"><a href="#基本标签" class="headerlink" title="基本标签"></a>基本标签</h3><ol>
+<li>nuxt-link</li>
+<li>_是动态路由的标志</li>
+</ol>
+<h3 id="默认模板"><a href="#默认模板" class="headerlink" title="默认模板"></a>默认模板</h3><ol>
+<li>app.html</li>
+<li>这样在每一个页面上都会引入app.html的内容</li>
+</ol>
+<h3 id="默认布局"><a href="#默认布局" class="headerlink" title="默认布局"></a>默认布局</h3><h3 id="异步请求"><a href="#异步请求" class="headerlink" title="异步请求"></a>异步请求</h3><ol>
+<li>asyncData</li>
+<li>asyncData() {<br>return axios.get(url).then(res =&gt; {info: res.data}) // 自动把info写入到data中<br>}</li>
+<li>async asyncData() {<br>let {data} = await axios get(url)<br>return {info: data}<br>}</li>
+</ol>
+<h3 id="静态资源文件引用和打包生产"><a href="#静态资源文件引用和打包生产" class="headerlink" title="静态资源文件引用和打包生产"></a>静态资源文件引用和打包生产</h3><ol>
+<li>~</li>
+<li>npm run generate // 打包</li>
+<li>安装npm i -g live-server</li>
+<li>输入live-server启动</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-13T02:10:20.644Z" itemprop="dateUpdated">2019-09-13 10:10:20</time>
+</span><br>
+
+
+        
+        做自己喜欢做的事，无所谓输与赢，至少你赢了自己
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="Robin LEI">
+            Robin LEI
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nuxt/">nuxt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/09/13/nuxt/&title=《nuxt》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/09/13/nuxt/&title=《nuxt》 — Robin LEI&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/13/nuxt/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nuxt》 — Robin LEI&url=http://yoursite.com/2019/09/13/nuxt/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/09/13/nuxt/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/09/03/web安全/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">web安全</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Robin LEI &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/09/13/nuxt/&title=《nuxt》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/09/13/nuxt/&title=《nuxt》 — Robin LEI&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/13/nuxt/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nuxt》 — Robin LEI&url=http://yoursite.com/2019/09/13/nuxt/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/09/13/nuxt/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABwUlEQVR42u3aO24DMQwFQN//0hsgVYIg8qPIlbeYrQx/5FFD6JF6veLn+n5+vv77zvqb6xWGH1xc3Db3Wj45aE1J1lwbcHFxz3P7xWuK/saGi4v7MG5ne/01cXFxn8ld/0FSsBI6Li7uc7hJ+EkOMf13xrIaLi5ug7vXMJ19fXt/FxcXd2gqkReUvQJU/ndcXNwj3DzGVBsf1bCUt1BxcXHv5ialJw9FyYbzT/8tYbi4uEe4+aKz28tD0a8TGS4u7nHu3tJ7l7qSCxmF2IOLizvE3Rul7EWdTkB6cy7DxcUd5ebN0BzdGdUUpsG4uLhHuHn7cr1oZxhT3hMuLu4N3KkIVB3AVGPPcGLDxcUdnWDuxZi8wYqLi/sEbnVcWh2u7F25iEYpuLi4t3HzOlcdjVRDVL4CLi7u3dwrfgqTmWJnozDCwcXFPcjtFJ2c29kYLi7ueW61nCXRJW+eFraBi4t7hNs/lHQC0l7cwsXFPcOtxp5oMtO4xlG+noWLi3sbd6p5UR2ulCMTLi7uw7jr71R/dXshw8XFPc6tXsvYO9zg4uJ+ltspLvlxZ+CSBy4u7hFutWGajE77DVZcXNwPcb8A8tq0e97mb2gAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Robin!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Robin LEI!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
