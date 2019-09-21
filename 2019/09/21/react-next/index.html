@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>react-next | Robin LEI | 用代码改变世界，因为喜欢所以热爱!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="react-next,react">
+    <meta name="description" content="SPA 单一页面ian，首屏加载过慢 不能seo(对seo不友好)  next.js SSR 服务端渲染 自带数据同步 带有丰富的插件(自己形成了生态) 配置灵活  项目搭建方式一  create-next-app npx create-next-app demo  方式二  yarn add react react-dom next 脚本命令配置:123&amp;quot;dev&amp;quot;: &amp;quo">
+<meta name="keywords" content="react-next,react">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-next">
+<meta property="og:url" content="http://yoursite.com/2019/09/21/react-next/index.html">
+<meta property="og:site_name" content="Robin LEI">
+<meta property="og:description" content="SPA 单一页面ian，首屏加载过慢 不能seo(对seo不友好)  next.js SSR 服务端渲染 自带数据同步 带有丰富的插件(自己形成了生态) 配置灵活  项目搭建方式一  create-next-app npx create-next-app demo  方式二  yarn add react react-dom next 脚本命令配置:123&amp;quot;dev&amp;quot;: &amp;quo">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-21T01:27:32.138Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react-next">
+<meta name="twitter:description" content="SPA 单一页面ian，首屏加载过慢 不能seo(对seo不友好)  next.js SSR 服务端渲染 自带数据同步 带有丰富的插件(自己形成了生态) 配置灵活  项目搭建方式一  create-next-app npx create-next-app demo  方式二  yarn add react react-dom next 脚本命令配置:123&amp;quot;dev&amp;quot;: &amp;quo">
+    
+        <link rel="alternate" type="application/atom+xml" title="Robin LEI" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Robin LEI</h5>
+          <a href="mailto:13661603945@163.com" title="13661603945@163.com" class="mail">13661603945@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HomePage
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Robin-LEI" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://blog.csdn.net/weixin_42259266"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">react-next</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">react-next</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-09-21T01:25:45.000Z" itemprop="datePublished" class="page-time">
+  2019-09-21
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SPA"><span class="post-toc-number">1.</span> <span class="post-toc-text">SPA</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#next-js"><span class="post-toc-number">2.</span> <span class="post-toc-text">next.js</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#项目搭建"><span class="post-toc-number">3.</span> <span class="post-toc-text">项目搭建</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#路由"><span class="post-toc-number">4.</span> <span class="post-toc-text">路由</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用query传递参数以及参数的接收"><span class="post-toc-number">5.</span> <span class="post-toc-text">使用query传递参数以及参数的接收</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#路由的钩子事件"><span class="post-toc-number">6.</span> <span class="post-toc-text">路由的钩子事件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用axios获取数据"><span class="post-toc-number">7.</span> <span class="post-toc-text">使用axios获取数据</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何编写样式"><span class="post-toc-number">8.</span> <span class="post-toc-text">如何编写样式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模块懒加载"><span class="post-toc-number">9.</span> <span class="post-toc-text">模块懒加载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#利于SEO"><span class="post-toc-number">10.</span> <span class="post-toc-text">利于SEO</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#next中引入css"><span class="post-toc-number">11.</span> <span class="post-toc-text">next中引入css</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#next使用antd"><span class="post-toc-number">12.</span> <span class="post-toc-text">next使用antd</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#next打包"><span class="post-toc-number">13.</span> <span class="post-toc-text">next打包</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-react-next"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">react-next</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-09-21 09:25:45" datetime="2019-09-21T01:25:45.000Z"  itemprop="datePublished">2019-09-21</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="SPA"><a href="#SPA" class="headerlink" title="SPA"></a>SPA</h3><ol>
+<li>单一页面ian，首屏加载过慢</li>
+<li>不能seo(对seo不友好)</li>
+</ol>
+<h3 id="next-js"><a href="#next-js" class="headerlink" title="next.js"></a>next.js</h3><ol>
+<li>SSR</li>
+<li>服务端渲染</li>
+<li>自带数据同步</li>
+<li>带有丰富的插件(自己形成了生态)</li>
+<li>配置灵活</li>
+</ol>
+<h3 id="项目搭建"><a href="#项目搭建" class="headerlink" title="项目搭建"></a>项目搭建</h3><p><strong>方式一</strong></p>
+<ol>
+<li>create-next-app</li>
+<li>npx create-next-app demo</li>
+</ol>
+<p><strong>方式二</strong></p>
+<ol>
+<li>yarn add react react-dom next</li>
+<li>脚本命令配置:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;dev&quot;: &quot;next&quot;,</span><br><span class="line">&quot;build&quot;: &quot;next build&quot;,</span><br><span class="line">&quot;start&quot;: &quot;next start&quot;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><ol>
+<li>会根据在pages下面写的路径来自动生成路由</li>
+<li>Link标签控制跳转</li>
+<li>Router.push 编程式跳转</li>
+</ol>
+<h3 id="使用query传递参数以及参数的接收"><a href="#使用query传递参数以及参数的接收" class="headerlink" title="使用query传递参数以及参数的接收"></a>使用query传递参数以及参数的接收</h3><ol>
+<li>import {withRouter} from ‘next/router’</li>
+<li>router.query.arg</li>
+</ol>
+<h3 id="路由的钩子事件"><a href="#路由的钩子事件" class="headerlink" title="路由的钩子事件"></a>路由的钩子事件</h3><ol>
+<li>绑定事件：Router.events.on(‘routeChangeStart’, (…arg) =&gt; {<br>console.log(..arg)<br>})</li>
+<li>routeChangeStart</li>
+<li>routeChangeComplete</li>
+<li>beforeHistoryChange</li>
+<li>routeChangeError</li>
+<li>hashChangeStart</li>
+<li>hashChangeComplete</li>
+</ol>
+<h3 id="使用axios获取数据"><a href="#使用axios获取数据" class="headerlink" title="使用axios获取数据"></a>使用axios获取数据</h3><ol>
+<li>只能在getInitialProps里面进行数据请求、</li>
+<li>使用easy-mock模拟数据<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import Link from &apos;next/link&apos;</span><br><span class="line">import &#123;withRouter&#125; from &apos;next/router&apos;</span><br><span class="line">import axios from &apos;axios&apos;</span><br><span class="line">const Test = (&#123;router, list&#125;) =&gt; &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;h1&gt;这是test页面&lt;/h1&gt;</span><br><span class="line">      &lt;h2&gt;&#123;router.query.name&#125;&lt;/h2&gt;</span><br><span class="line">      &lt;h3&gt;&#123;list&#125;&lt;/h3&gt;</span><br><span class="line">      &lt;Link href=&apos;/index&apos;&gt;</span><br><span class="line">        &lt;a&gt;回到首页&lt;/a&gt;</span><br><span class="line">      &lt;/Link&gt;</span><br><span class="line">    &lt;/&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line">Test.getInitialProps = async () =&gt; &#123;</span><br><span class="line">  const promise = new Promise(resolve =&gt; &#123;</span><br><span class="line">    axios(&apos;https://www.easy-mock.com/mock/5cfcce489dc7c36bd6da2c99/xiaojiejie/getList&apos;).then(res =&gt; &#123;</span><br><span class="line">      console.log(res)</span><br><span class="line">      resolve(res.data.data)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">  return await promise</span><br><span class="line">&#125;</span><br><span class="line">export default withRouter(Test)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="如何编写样式"><a href="#如何编写样式" class="headerlink" title="如何编写样式"></a>如何编写样式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import &#123;useState&#125; from &apos;react&apos;</span><br><span class="line">function TestColor() &#123;</span><br><span class="line">  const [color, setColor] = useState(&apos;blue&apos;)</span><br><span class="line">  const changeColor = () =&gt; &#123;</span><br><span class="line">    setColor(color == &apos;blue&apos; ? &apos;red&apos; : &apos;blue&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">  return (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;div className=&apos;blue&apos; onClick=&#123;changeColor&#125;&gt;这是蓝色&lt;/div&gt;</span><br><span class="line">      &lt;style jsx&gt;</span><br><span class="line">        &#123;</span><br><span class="line">          `</span><br><span class="line">            .blue &#123;</span><br><span class="line">              color: $&#123;color&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">          `</span><br><span class="line">        &#125;</span><br><span class="line">      &lt;/style&gt;</span><br><span class="line">    &lt;/&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line">export default TestColor</span><br></pre></td></tr></table></figure>
+
+<h3 id="模块懒加载"><a href="#模块懒加载" class="headerlink" title="模块懒加载"></a>模块懒加载</h3><p>一. 外部模块懒加载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const changeTime = async () =&gt; &#123;</span><br><span class="line">  const moment = await import(&apos;moment&apos;)</span><br><span class="line">  setTime(moment.default(Date.now()).format())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>二. 自定义组件懒加载</p>
+<ol>
+<li>import dynamic from ‘next/dynamic’</li>
+<li>const Com = dynamic(import(‘./components/com’))</li>
+</ol>
+<h3 id="利于SEO"><a href="#利于SEO" class="headerlink" title="利于SEO"></a>利于SEO</h3><ol>
+<li>import Head from ‘next/head’</li>
+<li><head><meta name="generator" content="Hexo 3.9.0">
+<title></title>
+<meta>
+</head>
+
+</li>
+</ol>
+<h3 id="next中引入css"><a href="#next中引入css" class="headerlink" title="next中引入css"></a>next中引入css</h3><ol>
+<li>yarn add @zeit/next-css</li>
+<li>新建next.config.js<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const withCss = require(&apos;@zeit/next-css&apos;)</span><br><span class="line">if(typeof require !== &apos;undefined&apos;) &#123;</span><br><span class="line">  require.extensions[&apos;.css&apos;] = file =&gt; &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">module.exports = withCss(&#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="next使用antd"><a href="#next使用antd" class="headerlink" title="next使用antd"></a>next使用antd</h3><ol>
+<li><p>yarn add antd</p>
+</li>
+<li><p>yarn add babel-plugin-import 按需加载</p>
+</li>
+<li><p>安装完成后，在项目根目录建立.babelrc文件，然后写入如下配置文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;presets&quot;:[&quot;next/babel&quot;],  //Next.js的总配置文件，相当于继承了它本身的所有配置</span><br><span class="line">    &quot;plugins&quot;:[     //增加新的插件，这个插件就是让antd可以按需引入，包括CSS</span><br><span class="line">        [</span><br><span class="line">            &quot;import&quot;,</span><br><span class="line">            &#123;</span><br><span class="line">                &quot;libraryName&quot;:&quot;antd&quot;,</span><br><span class="line">                &quot;style&quot;:&quot;css&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这样配置好了以后，webpack就不会默认把整个Ant Design的包都进行打包到生产环境了，而是我们使用那个组件就打包那个组件,同样CSS也是按需打包的。</p>
+</li>
+</ol>
+<h3 id="next打包"><a href="#next打包" class="headerlink" title="next打包"></a>next打包</h3><ol>
+<li>其实Next.js大打包时非常简单的，只要一个命令就可以打包成功。但是当你使用了Ant Desgin后，在打包的时候会遇到一些坑。</li>
+<li>在page目录下，新建一个_app.js文件，然后写入下面的代码<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import App from &apos;next/app&apos;</span><br><span class="line">import &apos;antd/dist/antd.css&apos;</span><br><span class="line">export default App</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-21T01:27:32.138Z" itemprop="dateUpdated">2019-09-21 09:27:32</time>
+</span><br>
+
+
+        
+        做自己喜欢做的事，无所谓输与赢，至少你赢了自己
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="Robin LEI">
+            Robin LEI
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-next/">react-next</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/09/21/react-next/&title=《react-next》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/09/21/react-next/&title=《react-next》 — Robin LEI&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/21/react-next/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react-next》 — Robin LEI&url=http://yoursite.com/2019/09/21/react-next/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/09/21/react-next/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/09/18/fabric/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">fabric</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Robin LEI &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/09/21/react-next/&title=《react-next》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/09/21/react-next/&title=《react-next》 — Robin LEI&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/21/react-next/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react-next》 — Robin LEI&url=http://yoursite.com/2019/09/21/react-next/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/09/21/react-next/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByUlEQVR42u3aQW7DIBAFUN//0q3UVaXGzh8GCJUeq0gh5sULNMznuuLx9TN+f/47nr+9m3OtGLi4uG1uvkD/CXfPTJ6Ai4u7n1vdvJ6fkMxPXgcuLu753PzbvFTCxcX979xq6dN5Hbi4uCdwO0eXTutk4VkNFxe3wZ1VmnQ+L+/v4uLiTkol8tZG3i5prY6Li7uFmxQrnSImaapWW6i4uLg7uXlwkm9D1UZJtDouLu5ibgLKl0w2tXzOi7VwcXG3cKvLJxcpOmHqc9GDi4v7WW416qhuhdUj05uNDBcXdyN3LP4cy3PK8SouLu4y7tiGUp3Zb5Tg4uLu5HYuW+Qd2WoRU4hVcHFxF3Dz0LTa+qyWRLi4uCdz85B1LPfMmy+3yQ8uLu5ibv9iVrJM9VdvXgcuLu5ibr9MyUuivFS6/Uu4uLgbufmmU22OVLetaCPDxcXdws1H0m3Nj0OFBDi/A4KLi9vmjuWYs3KbJGIZjGBxcXHb3LHNK/nHeVukEOrg4uJu5OblSPVK1rQLWLi4uEdy8/mzGigvnoCLi3swtxqgTihucHFxt3PHgpA8gu20QgbPari4uA1u9cRRvaiRHITGWq64uLgLuN8FIyULoOpv2gAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Robin!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Robin LEI!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
