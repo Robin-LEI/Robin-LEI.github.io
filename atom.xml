@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-25T14:43:25.057Z</updated>
+  <updated>2019-09-25T14:58:50.052Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>module</title>
+    <title>前端模块化</title>
     <link href="http://yoursite.com/2019/09/25/module/"/>
     <id>http://yoursite.com/2019/09/25/module/</id>
     <published>2019-09-25T14:42:33.000Z</published>
-    <updated>2019-09-25T14:43:25.057Z</updated>
+    <updated>2019-09-25T14:58:50.052Z</updated>
     
     <content type="html"><![CDATA[<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><ol><li>最早的就是单纯的写代码(非常容易污染全局环境)</li><li>然后演化到了使用命名空间的形式去简单包装，但是本质上也还是对象，仍然不安全</li><li>然后演化到了使用匿名闭包(IIFE模式)</li><li>在增强到引入依赖</li></ol><h3 id="全局函数模式"><a href="#全局函数模式" class="headerlink" title="全局函数模式"></a>全局函数模式</h3><ol><li>将不同的功能封装在不同的全局函数里</li><li>非常容易覆盖，不管是函数名还是变量</li></ol><h3 id="namespace"><a href="#namespace" class="headerlink" title="namespace"></a>namespace</h3><ol><li>仍然可以操作对象，修改数据</li></ol><h3 id="匿名函数自调用"><a href="#匿名函数自调用" class="headerlink" title="匿名函数自调用"></a>匿名函数自调用</h3><ol><li>想让外面拿到数据，就得通过window暴露</li></ol><h3 id="IIFE"><a href="#IIFE" class="headerlink" title="IIFE"></a>IIFE</h3><ol><li>引入依赖</li><li>现代模块实现的基石<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(function(window, $) &#123;</span><br><span class="line">  let name = &apos;test&apos;</span><br><span class="line">  function foo() &#123;</span><br><span class="line">    console.log(name)</span><br><span class="line">  &#125;</span><br><span class="line">  $(&apos;body&apos;).css(&apos;background&apos;: &apos;red&apos;)</span><br><span class="line">&#125;)(window, jQuery)</span><br></pre></td></tr></table></figure></li></ol><h3 id="commonjs"><a href="#commonjs" class="headerlink" title="commonjs"></a>commonjs</h3><ol><li>nodejs就是基于这种</li><li>每一个文件都是一个模块</li><li>模块分为第三方模块和自定义模块</li><li>module.exports和exports.xxx都可以导出，但是本质上导出的是exports</li><li>在浏览器端如果需要使用commonjs需要引入browserify浏览器打包工具</li><li>执行browser js/src/index.js -o js/dist/bundle.js</li></ol><h3 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h3><ol><li>专门用在浏览器端</li><li>异步加载模块</li><li>模块分为无依赖模块和有依赖模块</li><li>需要引入require.js库</li><li>在没有引入AMD概念之前，前端js模块之间的引入十分恶心，对于错综复杂的项目依赖之间容易搞混，会导致页面上引入过多的script标签，而script标签又会导致页面请求次数过多，影响性能</li><li>jquery内置支持AMD</li></ol><h3 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h3><ol><li>依赖sea.js库</li><li>借鉴了commonJS和CMD</li><li>可以同步加载模块也可以异步加载模块</li></ol><h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><ol><li><p>export导出</p></li><li><p>import导入</p></li><li><p>在浏览器不支持es6语法的时候，需要引入babel转换工具，需要安装：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm i babel-cli browserify -g</span><br><span class="line">npm i babel-preset-es2015 -S</span><br></pre></td></tr></table></figure></li><li><p>注意babel只能编译文件，不能新建文件夹</p></li></ol>]]></content>
     
