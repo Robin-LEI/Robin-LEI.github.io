@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>闭包 | Robin LEI | 用代码改变世界，因为喜欢所以热爱!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="js,闭包">
+    <meta name="description" content="闭包 获取函数的局部变量 让局部变量始终生存在内存中，避免被垃圾回收 闭包中的this都是window 不能滥用闭包，因为变量不能得到及时的释放，可能会造成内存溢出 不安全，因为在外部可以改变函数内部的局部变量值 闭包是一个能够读取函数内部变量的函数 同时，闭包也是一座桥梁–连接了函数的外部和内部  作用域 全局 函数（局部） js语言的特殊之处在函数内部能够直接读取全局变量，反之不行  如何在函">
+<meta name="keywords" content="js,闭包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="闭包">
+<meta property="og:url" content="http://yoursite.com/2019/09/27/闭包/index.html">
+<meta property="og:site_name" content="Robin LEI">
+<meta property="og:description" content="闭包 获取函数的局部变量 让局部变量始终生存在内存中，避免被垃圾回收 闭包中的this都是window 不能滥用闭包，因为变量不能得到及时的释放，可能会造成内存溢出 不安全，因为在外部可以改变函数内部的局部变量值 闭包是一个能够读取函数内部变量的函数 同时，闭包也是一座桥梁–连接了函数的外部和内部  作用域 全局 函数（局部） js语言的特殊之处在函数内部能够直接读取全局变量，反之不行  如何在函">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-27T15:18:01.965Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="闭包">
+<meta name="twitter:description" content="闭包 获取函数的局部变量 让局部变量始终生存在内存中，避免被垃圾回收 闭包中的this都是window 不能滥用闭包，因为变量不能得到及时的释放，可能会造成内存溢出 不安全，因为在外部可以改变函数内部的局部变量值 闭包是一个能够读取函数内部变量的函数 同时，闭包也是一座桥梁–连接了函数的外部和内部  作用域 全局 函数（局部） js语言的特殊之处在函数内部能够直接读取全局变量，反之不行  如何在函">
+    
+        <link rel="alternate" type="application/atom+xml" title="Robin LEI" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Robin LEI</h5>
+          <a href="mailto:13661603945@163.com" title="13661603945@163.com" class="mail">13661603945@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HomePage
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Robin-LEI" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://blog.csdn.net/weixin_42259266"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">闭包</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">闭包</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-09-27T15:17:08.000Z" itemprop="datePublished" class="page-time">
+  2019-09-27
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#闭包"><span class="post-toc-number">1.</span> <span class="post-toc-text">闭包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作用域"><span class="post-toc-number">2.</span> <span class="post-toc-text">作用域</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#如何在函数外部读取函数内部变量"><span class="post-toc-number">3.</span> <span class="post-toc-text">如何在函数外部读取函数内部变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#闭包demo"><span class="post-toc-number">4.</span> <span class="post-toc-text">闭包demo</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-闭包"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">闭包</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-09-27 23:17:08" datetime="2019-09-27T15:17:08.000Z"  itemprop="datePublished">2019-09-27</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><ol>
+<li>获取函数的局部变量</li>
+<li>让局部变量始终生存在内存中，避免被垃圾回收</li>
+<li>闭包中的this都是window</li>
+<li>不能滥用闭包，因为变量不能得到及时的释放，可能会造成内存溢出</li>
+<li>不安全，因为在外部可以改变函数内部的局部变量值</li>
+<li>闭包是一个能够读取函数内部变量的函数</li>
+<li>同时，闭包也是一座桥梁–连接了函数的外部和内部</li>
+</ol>
+<h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><ol>
+<li>全局</li>
+<li>函数（局部）</li>
+<li>js语言的特殊之处在函数内部能够直接读取全局变量，反之不行</li>
+</ol>
+<h3 id="如何在函数外部读取函数内部变量"><a href="#如何在函数外部读取函数内部变量" class="headerlink" title="如何在函数外部读取函数内部变量"></a>如何在函数外部读取函数内部变量</h3><ol>
+<li>不使用var声明的变量是全局变量</li>
+<li>但是只有函数执行后才有值</li>
+<li>一个没有返回值的函数其返回值是undefined</li>
+</ol>
+<h3 id="闭包demo"><a href="#闭包demo" class="headerlink" title="闭包demo"></a>闭包demo</h3><p>1.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;ul id=&quot;ul&quot;&gt;</span><br><span class="line">			&lt;li&gt;aaaa&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;bbbb&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;cccc&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;dddd&lt;/li&gt;</span><br><span class="line">			&lt;li&gt;eeee&lt;/li&gt;</span><br><span class="line">		&lt;/ul&gt;</span><br><span class="line">		&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">			var ul = document.getElementById(&apos;ul&apos;)</span><br><span class="line">			for(var i = 0; i &lt; ul.children.length; i++) &#123;</span><br><span class="line">				(function(i) &#123;</span><br><span class="line">					ul.children[i].onclick = function() &#123;</span><br><span class="line">						alert(i)</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;)(i)</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot; /&gt;</span><br><span class="line">		&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">			function fun(n, o) &#123;</span><br><span class="line">				console.log(o)</span><br><span class="line">				return &#123;</span><br><span class="line">					fun: function(m) &#123;</span><br><span class="line">						return fun(m, n)</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			// var a = fun(0)</span><br><span class="line">			// a.fun(1)</span><br><span class="line">			// a.fun(2)</span><br><span class="line">			// a.fun(3)</span><br><span class="line">			</span><br><span class="line">			// var b = fun(0).fun(1).fun(2).fun(3)</span><br><span class="line">			</span><br><span class="line">			var c = fun(0).fun(1)</span><br><span class="line">			c.fun(2)</span><br><span class="line">			c.fun(3)</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-27T15:18:01.965Z" itemprop="dateUpdated">2019-09-27 23:18:01</time>
+</span><br>
+
+
+        
+        做自己喜欢做的事，无所谓输与赢，至少你赢了自己
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="Robin LEI">
+            Robin LEI
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/09/27/闭包/&title=《闭包》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/09/27/闭包/&title=《闭包》 — Robin LEI&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/27/闭包/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《闭包》 — Robin LEI&url=http://yoursite.com/2019/09/27/闭包/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/09/27/闭包/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/09/27/html/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">HTML</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Robin LEI &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/09/27/闭包/&title=《闭包》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/09/27/闭包/&title=《闭包》 — Robin LEI&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/27/闭包/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《闭包》 — Robin LEI&url=http://yoursite.com/2019/09/27/闭包/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/09/27/闭包/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABx0lEQVR42u3awa4CIQwF0Pn/n/Ylrt4G55YCjslhZcaoBxcNveW64vV6r/+vR0+qz68dCxcXt819fVwj7ufvyTeZG3Bxcc9zq8Urf558KjHg4uI+kzt3Akm+ExcX93e5SWOTvIuLi/sr3KT56Rxlqptf0Kvh4uI2uHOB6drX2/NdXFzcRVOJapGqFqDyr+Pi4h7hjgpKMiyZOwxVm6sr6YdwcXGXcvMfzi9PJIUseXdYwnBxcTdz84an09Lkf0G1sOLi4u7gdi5J5HFn51LXTd3FxcXdxq1ew5obluSfGm4DFxf3CLdaXKoD0bx1KUSuuLi4m7mdaCMfx/aDElxc3JPc/JiSX6uaC00KYxVcXNzN3E5sUY1QO4EILi7ueW51yFGulMUrFzejFFxc3M3czuh01Tg2v4qBi4t7hps0PKtamjw6GW4JFxf3IDcpQJNTmnYIi4uL+y1uvqrbWDVoiaa7uLi4i7hrR6cJMS+aeeuFi4u7gztXvOYymGr8OkxxcHFxj3Dnwov8YDRXQXFxcZ/PzQelnWDlpinCxcV9JDcfuy4+3ODi4h7nFoadQTvUGc0ui0VwcXEb3GpgOncxq4rDxcX9EvcPV/Bsw+abC2oAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Robin!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Robin LEI!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
