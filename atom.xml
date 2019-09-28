@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-27T15:18:01.965Z</updated>
+  <updated>2019-09-28T04:17:52.677Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>函数与变量</title>
+    <link href="http://yoursite.com/2019/09/28/%E5%87%BD%E6%95%B0%E4%B8%8E%E5%8F%98%E9%87%8F/"/>
+    <id>http://yoursite.com/2019/09/28/函数与变量/</id>
+    <published>2019-09-28T04:16:22.000Z</published>
+    <updated>2019-09-28T04:17:52.677Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="变量提升机制"><a href="#变量提升机制" class="headerlink" title="变量提升机制"></a>变量提升机制</h3><ol><li>JavaScript的引擎的工作方式是，先解析代码，获取所有被声明的变量，在去一行行的执行代码，这造成的结果就是所有变量的声明语句，都会被提升到代码的头部，JavaScript的这种读取变量的机制就叫做变量提升。</li><li>所有被var声明的语句都会被提升到代码的头部</li><li>如果不使用var关键字声明变量，则变量是全局变量，按照正常书写顺序去执行</li></ol><h3 id="一等公民"><a href="#一等公民" class="headerlink" title="一等公民"></a>一等公民</h3><ol><li>可以像简单值一样赋值、传参、返回</li></ol><h3 id="函数名提升"><a href="#函数名提升" class="headerlink" title="函数名提升"></a>函数名提升</h3><ol><li><p>JavaScript引擎将函数名视同变量名，所以采用function命令声明函数时，整个函数会将变量声明一样，被提升到代码头部 </p></li><li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qiuhe(1,2)</span><br><span class="line">function qiuhe(a,b) &#123;console.log(a+b)&#125; // 3</span><br></pre></td></tr></table></figure></li><li><p>只有function声明的函数会发生函数名提升，而如果通过赋值语句写的函数则不会</p></li><li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qiuhe(1,2)</span><br><span class="line">var qiuhe = function(a,b) &#123;console.log(a+b)&#125; // qiuhe is not a function</span><br></pre></td></tr></table></figure></li></ol><h3 id="函数的作用域链"><a href="#函数的作用域链" class="headerlink" title="函数的作用域链"></a>函数的作用域链</h3><ol><li>函数的变量值的查找方式：优先在本层(所在函数的作用域)中查找，当本层中没有的时候，向上一层查找，如果找到返回，否则继续向上查找</li><li>当在全局作用域内也没有找到，则此变量没有被定义</li><li><strong>函数体</strong>的变量提升，与全局作用域一样，函数作用域内部也会产生”变量提升”现象，var命令声明的变量，不管在什么位置，变量声明都会被提升到<strong>函数体</strong>的头部</li></ol><h3 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h3><ol><li>将字符串当作语句执行</li><li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;var num = 100;&apos;;</span><br><span class="line">eval(str);</span><br><span class="line">console.log(num);</span><br></pre></td></tr></table></figure></li></ol><h3 id="instanceof类型检测"><a href="#instanceof类型检测" class="headerlink" title="instanceof类型检测"></a>instanceof类型检测</h3><ol><li>typeof用来检测基本数据类型，但是如果是引用数据类型，则需要使用instanceof操作符</li><li>instanceof用于判断一个变量是否是某个对象的实例</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;变量提升机制&quot;&gt;&lt;a href=&quot;#变量提升机制&quot; class=&quot;headerlink&quot; title=&quot;变量提升机制&quot;&gt;&lt;/a&gt;变量提升机制&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;JavaScript的引擎的工作方式是，先解析代码，获取所有被声明的变量，在去一行行的执行代码，
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>闭包</title>
@@ -118,9 +142,9 @@
     </summary>
     
     
-      <category term="mock" scheme="http://yoursite.com/tags/mock/"/>
-    
       <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
+    
+      <category term="mock" scheme="http://yoursite.com/tags/mock/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
@@ -231,9 +255,9 @@
     </summary>
     
     
-      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
-    
       <category term="nuxt" scheme="http://yoursite.com/tags/nuxt/"/>
+    
+      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
     
   </entry>
   

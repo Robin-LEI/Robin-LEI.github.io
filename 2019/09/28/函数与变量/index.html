@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>函数与变量 | Robin LEI | 用代码改变世界，因为喜欢所以热爱!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="js">
+    <meta name="description" content="变量提升机制 JavaScript的引擎的工作方式是，先解析代码，获取所有被声明的变量，在去一行行的执行代码，这造成的结果就是所有变量的声明语句，都会被提升到代码的头部，JavaScript的这种读取变量的机制就叫做变量提升。 所有被var声明的语句都会被提升到代码的头部 如果不使用var关键字声明变量，则变量是全局变量，按照正常书写顺序去执行  一等公民 可以像简单值一样赋值、传参、返回  函数">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数与变量">
+<meta property="og:url" content="http://yoursite.com/2019/09/28/函数与变量/index.html">
+<meta property="og:site_name" content="Robin LEI">
+<meta property="og:description" content="变量提升机制 JavaScript的引擎的工作方式是，先解析代码，获取所有被声明的变量，在去一行行的执行代码，这造成的结果就是所有变量的声明语句，都会被提升到代码的头部，JavaScript的这种读取变量的机制就叫做变量提升。 所有被var声明的语句都会被提升到代码的头部 如果不使用var关键字声明变量，则变量是全局变量，按照正常书写顺序去执行  一等公民 可以像简单值一样赋值、传参、返回  函数">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-09-28T04:17:52.677Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="函数与变量">
+<meta name="twitter:description" content="变量提升机制 JavaScript的引擎的工作方式是，先解析代码，获取所有被声明的变量，在去一行行的执行代码，这造成的结果就是所有变量的声明语句，都会被提升到代码的头部，JavaScript的这种读取变量的机制就叫做变量提升。 所有被var声明的语句都会被提升到代码的头部 如果不使用var关键字声明变量，则变量是全局变量，按照正常书写顺序去执行  一等公民 可以像简单值一样赋值、传参、返回  函数">
+    
+        <link rel="alternate" type="application/atom+xml" title="Robin LEI" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Robin LEI</h5>
+          <a href="mailto:13661603945@163.com" title="13661603945@163.com" class="mail">13661603945@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HomePage
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Robin-LEI" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://blog.csdn.net/weixin_42259266"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">函数与变量</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">函数与变量</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-09-28T04:16:22.000Z" itemprop="datePublished" class="page-time">
+  2019-09-28
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#变量提升机制"><span class="post-toc-number">1.</span> <span class="post-toc-text">变量提升机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一等公民"><span class="post-toc-number">2.</span> <span class="post-toc-text">一等公民</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数名提升"><span class="post-toc-number">3.</span> <span class="post-toc-text">函数名提升</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数的作用域链"><span class="post-toc-number">4.</span> <span class="post-toc-text">函数的作用域链</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#eval"><span class="post-toc-number">5.</span> <span class="post-toc-text">eval</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#instanceof类型检测"><span class="post-toc-number">6.</span> <span class="post-toc-text">instanceof类型检测</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-函数与变量"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">函数与变量</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-09-28 12:16:22" datetime="2019-09-28T04:16:22.000Z"  itemprop="datePublished">2019-09-28</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="变量提升机制"><a href="#变量提升机制" class="headerlink" title="变量提升机制"></a>变量提升机制</h3><ol>
+<li>JavaScript的引擎的工作方式是，先解析代码，获取所有被声明的变量，在去一行行的执行代码，这造成的结果就是所有变量的声明语句，都会被提升到代码的头部，JavaScript的这种读取变量的机制就叫做变量提升。</li>
+<li>所有被var声明的语句都会被提升到代码的头部</li>
+<li>如果不使用var关键字声明变量，则变量是全局变量，按照正常书写顺序去执行</li>
+</ol>
+<h3 id="一等公民"><a href="#一等公民" class="headerlink" title="一等公民"></a>一等公民</h3><ol>
+<li>可以像简单值一样赋值、传参、返回</li>
+</ol>
+<h3 id="函数名提升"><a href="#函数名提升" class="headerlink" title="函数名提升"></a>函数名提升</h3><ol>
+<li><p>JavaScript引擎将函数名视同变量名，所以采用function命令声明函数时，整个函数会将变量声明一样，被提升到代码头部 </p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qiuhe(1,2)</span><br><span class="line">function qiuhe(a,b) &#123;console.log(a+b)&#125; // 3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>只有function声明的函数会发生函数名提升，而如果通过赋值语句写的函数则不会</p>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">qiuhe(1,2)</span><br><span class="line">var qiuhe = function(a,b) &#123;console.log(a+b)&#125; // qiuhe is not a function</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="函数的作用域链"><a href="#函数的作用域链" class="headerlink" title="函数的作用域链"></a>函数的作用域链</h3><ol>
+<li>函数的变量值的查找方式：优先在本层(所在函数的作用域)中查找，当本层中没有的时候，向上一层查找，如果找到返回，否则继续向上查找</li>
+<li>当在全局作用域内也没有找到，则此变量没有被定义</li>
+<li><strong>函数体</strong>的变量提升，与全局作用域一样，函数作用域内部也会产生”变量提升”现象，var命令声明的变量，不管在什么位置，变量声明都会被提升到<strong>函数体</strong>的头部</li>
+</ol>
+<h3 id="eval"><a href="#eval" class="headerlink" title="eval"></a>eval</h3><ol>
+<li>将字符串当作语句执行</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;var num = 100;&apos;;</span><br><span class="line">eval(str);</span><br><span class="line">console.log(num);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="instanceof类型检测"><a href="#instanceof类型检测" class="headerlink" title="instanceof类型检测"></a>instanceof类型检测</h3><ol>
+<li>typeof用来检测基本数据类型，但是如果是引用数据类型，则需要使用instanceof操作符</li>
+<li>instanceof用于判断一个变量是否是某个对象的实例</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-09-28T04:17:52.677Z" itemprop="dateUpdated">2019-09-28 12:17:52</time>
+</span><br>
+
+
+        
+        做自己喜欢做的事，无所谓输与赢，至少你赢了自己
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="Robin LEI">
+            Robin LEI
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/09/28/函数与变量/&title=《函数与变量》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/09/28/函数与变量/&title=《函数与变量》 — Robin LEI&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/28/函数与变量/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《函数与变量》 — Robin LEI&url=http://yoursite.com/2019/09/28/函数与变量/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/09/28/函数与变量/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/09/27/闭包/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">闭包</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Robin LEI &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/09/28/函数与变量/&title=《函数与变量》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/09/28/函数与变量/&title=《函数与变量》 — Robin LEI&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/09/28/函数与变量/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《函数与变量》 — Robin LEI&url=http://yoursite.com/2019/09/28/函数与变量/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/09/28/函数与变量/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJ0lEQVR42u3awW7sIAwF0P7/T6fSW70uQq7ttNLAYTWKMsDJwjI2X1/xuP6N5Pn136g+v3vntYGBgfGxjGs51owEk2xrvW5ExcDAOICx3lweQO/+m4xk3dvnGBgYGMtQuF5+skUMDAyM+XTVhZOkEwMDA2NyiM1LZpPK2K+fxTEwMD6QUW0M/OXvX+xvYGBgfAjjGoyk6FYtvfV2hYGBsTcj38p8c0kJb914eNghBgbGpoykuF8Nr/mFjEmB78c7GBgYxzDWwbGXCPbCcVJWe8hwMTAwDmNUL2/1kr9RoMfAwNia0dv0eupqEW3e5sTAwDiNUS14JaF2UlArX+zAwMDYjrFeIA+F7x56q/crMDAwTmOUrzgU2wnVoBw1XDEwMA5g9MrxSbDOW6Q55jY1xMDA2JRRPe9Wf+cXKXorYmBgnMPID669Q+y7rdOH+TEwMLZj5I3GPKWrztArw90eYjEwMDZlTELh5OBaXbfQwsTAwNiIUZ36rSDbay0U2gMYGBibMibXvKJlxi2Eh5QRAwPjSMakoN+bOf9AGBgYpzHyhXtF/14QrwZoDAyMXRlXcVTTwfk7UcjGwMDYmpGP8pEyCNDVhLK3LgYGxh6MvKyfM+YXKcoBFwMD4wDGpAxX3Xov6j/AMDAwMIKrFXkzsneUjVJDDAyM4xnVhG9OLRTXMDAwDmBMwmg1KPfKalH3FQMDY1NGrzHQuwqWfLh3r2hgYGB8OOMbDB0ZBmiiB9QAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Robin!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Robin LEI!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
