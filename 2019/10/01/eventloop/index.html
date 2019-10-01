@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>eventloop | Robin LEI | 用代码改变世界，因为喜欢所以热爱!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="js">
+    <meta name="description" content="event loop JavaScript的代码按照队列的形式一个一个的执行，在同一时间只能执行一段代码 JS是单线程的，这一点是由JS本身的用途决定的，假如当一个线程在添加dom，另一个线程去删除dom，那么此时UI线程就会懵圈了，不知道听谁的 JS作为浏览器脚本存在，负责用户交互和操作dom JS代码如果长时间执行，会导致进程阻塞，进而冻结用户浏览器界面 JS的任务分为同步任务和异步任务 同步">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="eventloop">
+<meta property="og:url" content="http://yoursite.com/2019/10/01/eventloop/index.html">
+<meta property="og:site_name" content="Robin LEI">
+<meta property="og:description" content="event loop JavaScript的代码按照队列的形式一个一个的执行，在同一时间只能执行一段代码 JS是单线程的，这一点是由JS本身的用途决定的，假如当一个线程在添加dom，另一个线程去删除dom，那么此时UI线程就会懵圈了，不知道听谁的 JS作为浏览器脚本存在，负责用户交互和操作dom JS代码如果长时间执行，会导致进程阻塞，进而冻结用户浏览器界面 JS的任务分为同步任务和异步任务 同步">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-01T09:50:53.472Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="eventloop">
+<meta name="twitter:description" content="event loop JavaScript的代码按照队列的形式一个一个的执行，在同一时间只能执行一段代码 JS是单线程的，这一点是由JS本身的用途决定的，假如当一个线程在添加dom，另一个线程去删除dom，那么此时UI线程就会懵圈了，不知道听谁的 JS作为浏览器脚本存在，负责用户交互和操作dom JS代码如果长时间执行，会导致进程阻塞，进而冻结用户浏览器界面 JS的任务分为同步任务和异步任务 同步">
+    
+        <link rel="alternate" type="application/atom+xml" title="Robin LEI" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Robin LEI</h5>
+          <a href="mailto:13661603945@163.com" title="13661603945@163.com" class="mail">13661603945@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HomePage
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Robin-LEI" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://blog.csdn.net/weixin_42259266"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">eventloop</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">eventloop</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-10-01T09:49:54.000Z" itemprop="datePublished" class="page-time">
+  2019-10-01
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#event-loop"><span class="post-toc-number">1.</span> <span class="post-toc-text">event loop</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#浏览器的线程机制"><span class="post-toc-number">2.</span> <span class="post-toc-text">浏览器的线程机制</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-eventloop"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">eventloop</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-10-01 17:49:54" datetime="2019-10-01T09:49:54.000Z"  itemprop="datePublished">2019-10-01</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="event-loop"><a href="#event-loop" class="headerlink" title="event loop"></a>event loop</h3><ol>
+<li><strong>JavaScript的代码按照队列的形式一个一个的执行，在同一时间只能执行一段代码</strong></li>
+<li>JS是单线程的，这一点是由JS本身的用途决定的，假如当一个线程在添加dom，另一个线程去删除dom，那么此时UI线程就会懵圈了，不知道听谁的</li>
+<li>JS作为浏览器脚本存在，负责用户交互和操作dom</li>
+<li>JS代码如果长时间执行，会导致进程阻塞，进而冻结用户浏览器界面</li>
+<li>JS的任务分为同步任务和异步任务</li>
+<li>同步任务由JS主线程直接执行</li>
+<li>异步任务JS主线程会先执行一部分，比如点击事件，等用户点击时在执行剩余部分</li>
+<li>JS主线程会从任务队列中一个一个去执行</li>
+</ol>
+<h3 id="浏览器的线程机制"><a href="#浏览器的线程机制" class="headerlink" title="浏览器的线程机制"></a>浏览器的线程机制</h3><ol>
+<li>JS执行线程：执行JS代码</li>
+<li>UI线程：执行UI渲染，和JS执行线程互斥 </li>
+<li>JS事件循环线程</li>
+</ol>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-10-01T09:50:53.472Z" itemprop="dateUpdated">2019-10-01 17:50:53</time>
+</span><br>
+
+
+        
+        做自己喜欢做的事，无所谓输与赢，至少你赢了自己
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="Robin LEI">
+            Robin LEI
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/01/eventloop/&title=《eventloop》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/01/eventloop/&title=《eventloop》 — Robin LEI&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/01/eventloop/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《eventloop》 — Robin LEI&url=http://yoursite.com/2019/10/01/eventloop/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/01/eventloop/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/09/28/函数与变量/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">函数与变量</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Robin LEI &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/01/eventloop/&title=《eventloop》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/01/eventloop/&title=《eventloop》 — Robin LEI&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/01/eventloop/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《eventloop》 — Robin LEI&url=http://yoursite.com/2019/10/01/eventloop/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/01/eventloop/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABwElEQVR42u3aQYrDMBAEwPz/017Y00KI0y05E7OUTsHEdsmHQerR4xGP43c8X/k7nq/nVy4euLi429zjdDxzz1/fTiN/Ai4u7jz3vHi9ujkpcOf/yQ24uLj35CZ35UslXFzc/8EtFiLbnwMXF/cO3Hbr0hap/e0TLi7uJPeqpcnO7w/mu7i4uCX3KEceiHzk7bi4uCPcNvJoJ5BMr41QcXFxZ7jtFiVprqwFJclHwcXF/TT3PJjYabvmxyyKtg0uLu4gt705KVjJk9syiouL+11uW8KKFmk5mTcpDi4u7iA3X+60jdg2PC1miYuLeym3fdz+YYs2KMHFxZ3k5k2O/Q1PG6O8XPrg4uKOcNeKWhKbtpPExcW9A3dt8XFVScoXQ7i4uJPc80gijzLbsLXdFOHi4k5yj3i0r9+56+WUcHFxB7l1ZFlGqzuNFlxc3G9x18rZWuOkbeVGnVhcXNxLuW1ByVsv7bGtfEmEi4s7w21jkcWtS1zI3pQ2XFzcQe5aM3Wn+XrB8gUXF/cG3PY5+RGuYlOEi4t7S26+lGlBURyDi4s7yN15wVpE0jZicXFxJ7lrgWl72GLtQAYuLu449wdIBi7l/4i6+AAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Robin!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Robin LEI!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

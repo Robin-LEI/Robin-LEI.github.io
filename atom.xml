@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-28T04:17:52.677Z</updated>
+  <updated>2019-10-01T09:50:53.472Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>eventloop</title>
+    <link href="http://yoursite.com/2019/10/01/eventloop/"/>
+    <id>http://yoursite.com/2019/10/01/eventloop/</id>
+    <published>2019-10-01T09:49:54.000Z</published>
+    <updated>2019-10-01T09:50:53.472Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="event-loop"><a href="#event-loop" class="headerlink" title="event loop"></a>event loop</h3><ol><li><strong>JavaScript的代码按照队列的形式一个一个的执行，在同一时间只能执行一段代码</strong></li><li>JS是单线程的，这一点是由JS本身的用途决定的，假如当一个线程在添加dom，另一个线程去删除dom，那么此时UI线程就会懵圈了，不知道听谁的</li><li>JS作为浏览器脚本存在，负责用户交互和操作dom</li><li>JS代码如果长时间执行，会导致进程阻塞，进而冻结用户浏览器界面</li><li>JS的任务分为同步任务和异步任务</li><li>同步任务由JS主线程直接执行</li><li>异步任务JS主线程会先执行一部分，比如点击事件，等用户点击时在执行剩余部分</li><li>JS主线程会从任务队列中一个一个去执行</li></ol><h3 id="浏览器的线程机制"><a href="#浏览器的线程机制" class="headerlink" title="浏览器的线程机制"></a>浏览器的线程机制</h3><ol><li>JS执行线程：执行JS代码</li><li>UI线程：执行UI渲染，和JS执行线程互斥 </li><li>JS事件循环线程</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;event-loop&quot;&gt;&lt;a href=&quot;#event-loop&quot; class=&quot;headerlink&quot; title=&quot;event loop&quot;&gt;&lt;/a&gt;event loop&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;JavaScript的代码按照队列的形式一个一个
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>函数与变量</title>
@@ -142,9 +166,9 @@
     </summary>
     
     
-      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
-    
       <category term="mock" scheme="http://yoursite.com/tags/mock/"/>
+    
+      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
@@ -255,9 +279,9 @@
     </summary>
     
     
-      <category term="nuxt" scheme="http://yoursite.com/tags/nuxt/"/>
-    
       <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
+    
+      <category term="nuxt" scheme="http://yoursite.com/tags/nuxt/"/>
     
   </entry>
   
