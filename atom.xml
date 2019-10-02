@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-01T09:50:53.472Z</updated>
+  <updated>2019-10-02T11:45:22.335Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>mobx</title>
+    <link href="http://yoursite.com/2019/10/02/mobx/"/>
+    <id>http://yoursite.com/2019/10/02/mobx/</id>
+    <published>2019-10-02T11:45:00.000Z</published>
+    <updated>2019-10-02T11:45:22.335Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h3><ol><li>connect()是将state装饰为props，从而使得state变化视图也变化</li></ol><h3 id="MobX"><a href="#MobX" class="headerlink" title="MobX"></a>MobX</h3><ol><li>任何事情因为state变化而变化的他就应该变化而且是自动的</li><li>npm i mobx -S, npm i mobx-react -S</li><li>我们一定要深刻理解，react中一个组件，只因为两个事情的变化而变化<ul><li>组件的state变化(必须用setState来改变state的值)</li><li>传入到组件的props变化</li></ul></li><li>react的props本身是只读的</li><li>使用了Proxy代理对象</li></ol><h3 id="使用修饰器"><a href="#使用修饰器" class="headerlink" title="使用修饰器"></a>使用修饰器</h3><ol><li><p>es6新增的语法，使用@开头</p></li><li><p>修饰一个对象</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  @observable a: 100</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>修饰一个类</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@observer</span><br><span class="line">class App extends Components &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>需要安装如下插件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">// babel-plugin-transform-decorators-legacy</span><br></pre></td></tr></table></figure></li><li><p>受修饰器的影响，修饰器只能修饰类，所以还得安装一个插件</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i babel-plugin-transform-class-properties -S</span><br></pre></td></tr></table></figure></li></ol><h3 id="observable-and-observe"><a href="#observable-and-observe" class="headerlink" title="observable and observe"></a>observable and observe</h3><ol><li>前者表示可被观察的，来自mobx，类中的属性</li><li>后者表示观察者，来自mobx-react，组件类</li><li>类必须要实例化，传入组件当作props</li></ol><h3 id="action"><a href="#action" class="headerlink" title="@action"></a>@action</h3><h3 id="computed"><a href="#computed" class="headerlink" title="@computed"></a>@computed</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;redux&quot;&gt;&lt;a href=&quot;#redux&quot; class=&quot;headerlink&quot; title=&quot;redux&quot;&gt;&lt;/a&gt;redux&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;connect()是将state装饰为props，从而使得state变化视图也变化&lt;/li&gt;
+&lt;/ol&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="mobx" scheme="http://yoursite.com/tags/mobx/"/>
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
     <title>eventloop</title>
     <link href="http://yoursite.com/2019/10/01/eventloop/"/>
     <id>http://yoursite.com/2019/10/01/eventloop/</id>
     <published>2019-10-01T09:49:54.000Z</published>
-    <updated>2019-10-01T09:50:53.472Z</updated>
+    <updated>2019-10-01T09:53:25.745Z</updated>
     
     <content type="html"><![CDATA[<h3 id="event-loop"><a href="#event-loop" class="headerlink" title="event loop"></a>event loop</h3><ol><li><strong>JavaScript的代码按照队列的形式一个一个的执行，在同一时间只能执行一段代码</strong></li><li>JS是单线程的，这一点是由JS本身的用途决定的，假如当一个线程在添加dom，另一个线程去删除dom，那么此时UI线程就会懵圈了，不知道听谁的</li><li>JS作为浏览器脚本存在，负责用户交互和操作dom</li><li>JS代码如果长时间执行，会导致进程阻塞，进而冻结用户浏览器界面</li><li>JS的任务分为同步任务和异步任务</li><li>同步任务由JS主线程直接执行</li><li>异步任务JS主线程会先执行一部分，比如点击事件，等用户点击时在执行剩余部分</li><li>JS主线程会从任务队列中一个一个去执行</li></ol><h3 id="浏览器的线程机制"><a href="#浏览器的线程机制" class="headerlink" title="浏览器的线程机制"></a>浏览器的线程机制</h3><ol><li>JS执行线程：执行JS代码</li><li>UI线程：执行UI渲染，和JS执行线程互斥 </li><li>JS事件循环线程</li></ol>]]></content>
     
@@ -166,11 +193,11 @@
     </summary>
     
     
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
       <category term="mock" scheme="http://yoursite.com/tags/mock/"/>
     
       <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
-    
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
   </entry>
   
