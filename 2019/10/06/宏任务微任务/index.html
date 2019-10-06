@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>宏任务、微任务 | Robin LEI | 用代码改变世界，因为喜欢所以热爱!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="js">
+    <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;	&amp;lt;head&amp;gt;		&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;		&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;	&amp;lt;/head&amp;gt;	&amp;">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="宏任务、微任务">
+<meta property="og:url" content="http://yoursite.com/2019/10/06/宏任务微任务/index.html">
+<meta property="og:site_name" content="Robin LEI">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;	&amp;lt;head&amp;gt;		&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;		&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;	&amp;lt;/head&amp;gt;	&amp;">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-06T07:56:13.392Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="宏任务、微任务">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;	&amp;lt;head&amp;gt;		&amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;		&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;	&amp;lt;/head&amp;gt;	&amp;">
+    
+        <link rel="alternate" type="application/atom+xml" title="Robin LEI" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Robin LEI</h5>
+          <a href="mailto:13661603945@163.com" title="13661603945@163.com" class="mail">13661603945@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HomePage
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Robin-LEI" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://blog.csdn.net/weixin_42259266"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">宏任务、微任务</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">宏任务、微任务</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-10-06T07:52:59.000Z" itemprop="datePublished" class="page-time">
+  2019-10-06
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-宏任务微任务"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">宏任务、微任务</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-10-06 15:52:59" datetime="2019-10-06T07:52:59.000Z"  itemprop="datePublished">2019-10-06</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;!-- 一道题简单谈宏任务和微任务 --&gt;</span><br><span class="line">		&lt;!-- 宏任务 --&gt;</span><br><span class="line">		&lt;!-- JS是单线程的，JS code在js主线程上执行的 --&gt;</span><br><span class="line">		&lt;!-- 如果执行的过程中遇到了定时器，点击事件，ajax异步请求等，这个时候主线程先不执行它们，他们会进入事件队列中等待 --&gt;</span><br><span class="line">		&lt;!-- 主线程执行完代码后，会立即去任务队列中查看有没有任务等待执行，如果有则会把他们提到主线程上执行 --&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;!-- JS引擎规定了，setTimeout，setInterval，Ajax，click都属于宏任务 --&gt;</span><br><span class="line">		&lt;!-- 规定了new Promise().then(callback)，proceed.nextTick()属于微任务 --&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;!-- 宏任务就是指宏任务队列中的任务 --&gt;</span><br><span class="line">		&lt;!-- 微任务就是指微任务队列中的任务 --&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;!-- 宏任务队列不止一个，但是第一个宏任务队列只有一个任务等待主线程执行，当第一个宏任务队列全部执行完毕后，会立即查看是否存在微任务队列 --&gt;</span><br><span class="line">		&lt;!-- 如果存在微任务队列，就会先把微任务队列中的任务全部执行完毕，注意微任务队列和宏任务队列有所不同，微任务队列只能有一个 --&gt;</span><br><span class="line">		&lt;!-- 当微任务的任务全部执行完毕后，再去查看是否有其他的宏任务队列，如果有则继续执行 --&gt;</span><br><span class="line">		&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">			console.log(&apos;start&apos;); // 1</span><br><span class="line">			setTimeout(function() &#123;</span><br><span class="line">				console.log(&apos;setTimeout&apos;); // 5</span><br><span class="line">			&#125;, 0)</span><br><span class="line">			new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">				for(let i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">					console.log(i); // 2</span><br><span class="line">				&#125;</span><br><span class="line">				resolve(&apos;resolve&apos;)</span><br><span class="line">			&#125;).then(data =&gt; &#123;</span><br><span class="line">				console.log(data); // 4</span><br><span class="line">			&#125;)</span><br><span class="line">			console.log(&apos;end&apos;); // 3</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-10-06T07:56:13.392Z" itemprop="dateUpdated">2019-10-06 15:56:13</time>
+</span><br>
+
+
+        
+        做自己喜欢做的事，无所谓输与赢，至少你赢了自己
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="Robin LEI">
+            Robin LEI
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/06/宏任务微任务/&title=《宏任务、微任务》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/06/宏任务微任务/&title=《宏任务、微任务》 — Robin LEI&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/06/宏任务微任务/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《宏任务、微任务》 — Robin LEI&url=http://yoursite.com/2019/10/06/宏任务微任务/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/06/宏任务微任务/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/10/06/react/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">react</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/10/02/mobx/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">mobx</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Robin LEI &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/06/宏任务微任务/&title=《宏任务、微任务》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/06/宏任务微任务/&title=《宏任务、微任务》 — Robin LEI&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/06/宏任务微任务/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《宏任务、微任务》 — Robin LEI&url=http://yoursite.com/2019/10/06/宏任务微任务/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/06/宏任务微任务/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIklEQVR42u3aQW6DMBAF0Nz/0qnUbQT534aq2M+riAL2YzH1zPj1isf7d3xeORqfT33+9WiW83umBgYGxmMZ+YKOJmhJybP5mzEwMPZhnAfZo4fzK+eLO78z+QeAgYGB0f5Oroy9EwMDA6OdMk9xo6VgYGBgnDLawlmbiOZltdtzcQwMjAcy2sbAX/6+sb+BgYHxEMa7HHlATOa6bFUYGBhLM5Iy/bXJZ54G1wcyMDAwFmUk7cP2Sp7cJuE7QmJgYGzDyI9HzBTp2oAefTgMDIzNGDPHI/JA3H6IKH3FwMBYmpFv2vJd2UyQTbaJX6qGGBgYCzHazuDYYYh8KUnIxsDA2JMxFgTbAtlYEzR/JwYGxtqMsbDbgtvO6lg4xsDA2IHRFsjGQnbbBmhTYgwMjPUYrTgq1k8c5hgM9BgYGBswxo5W5IfD2oBbz4WBgbEoYyYgtldmPs2XLSkGBsbSjLz4NV8mm79erBADA2NRRhsQk0Jb/jnawt/hPRgYGMsx6pNiQwcp5j/Tl/djYGBsw5iZbH4krdMbWwIYGBj/mNFO05b1xzZ8M2AMDIz1GO9yJBu+seZo3kiIklgMDIyFGGNhbmziKB0tD2dMRWsMDIxHMcYOY127yWtbmBgYGHsy2iCbpLvtRnDs/RgYGBhXlduSIN4GYgwMDIyrGGNHMer1YGBgbMBok9jkE9wRdjEwMPZkzDcG5gtw9yW9GBgYD2f8ADP+/vWAcIEpAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Robin!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Robin LEI!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

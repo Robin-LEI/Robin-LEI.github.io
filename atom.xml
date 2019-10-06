@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-02T11:45:22.335Z</updated>
+  <updated>2019-10-06T10:45:31.116Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,78 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>url</title>
+    <link href="http://yoursite.com/2019/10/06/url/"/>
+    <id>http://yoursite.com/2019/10/06/url/</id>
+    <published>2019-10-06T10:44:46.000Z</published>
+    <updated>2019-10-06T10:45:31.116Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="输入一个url地址到网页出来发生了什么"><a href="#输入一个url地址到网页出来发生了什么" class="headerlink" title="输入一个url地址到网页出来发生了什么?"></a>输入一个url地址到网页出来发生了什么?</h3><ol><li>DNS解析<ul><li>先查看浏览器缓存有没有</li><li>如果没有查看本机hosts文件，有没有域名对应的IP地址</li><li>如果没有，查看路由器缓存有没有</li><li>如果没有，查看运营提供商有没有与之对应的IP地址</li><li>如果没有，继续查找至根域名解析服务器，从顶级域名.com开始进行递归搜索</li></ul></li><li>根据TCP协议，建立连接<ul><li>拿到IP地址后，根据TCP协议，建立连接(TCP的三次握手)</li><li>浏览器(客户端)(syn=1，用来建立连接，询问服务端，我能和你建立连接吗?我的序列号seq=x，如果同意，就回复ack=x+1)发送消息给服务端</li><li>服务端发送消息(ack=x+1,syn=1,seq=y,询问浏览器，我能和你建立连接吗?如果同意，回复ack=y+1)给客户端</li><li>浏览器发送消息(ack=y+1)给服务端，告诉说自己已经收到了</li></ul></li><li>发送请求报文<ul><li>浏览器开始发送请求报文信息</li></ul></li><li>接受响应报文<ul><li>服务端接受请求之后，发送响应报文给浏览器</li></ul></li><li>根据渲染树绘制页面<ul><li>浏览器在接受的过程中，如果遇到了不同的标记，就采用不同的方式去解析</li><li>如果遇到了HTML标记，浏览器就会采用html解析器去解析成DOM树</li><li>如果遇到了css/style/link标记，浏览器就会调用css解析器去解析为CSSOM树</li><li>如果遇到了script标记，就会调用js解析器解析执行js代码</li><li>将DOM树和CSSOM树合并为render tree(渲染树)</li><li>根据渲染树计算位置，计算出每个节点的位置信息，渲染到屏幕上</li></ul></li><li>断开连接(TCP四次挥手)<ul><li>第一次挥手，浏览器告诉服务器，我东西发送完了(请求报文)，你准备关闭吧</li><li>第二次挥手，服务器告诉浏览器，我东西接收完了(接受请求报文)我准备关闭了，你也准备吧</li><li>第三次挥手，服务器告诉浏览器，我东西发送完了(响应报文)，你准备关闭吧</li><li>第四次挥手，浏览器发送到服务器，告诉说自己东西接收(响应报文)完了，你准备关闭吧</li></ul></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;输入一个url地址到网页出来发生了什么&quot;&gt;&lt;a href=&quot;#输入一个url地址到网页出来发生了什么&quot; class=&quot;headerlink&quot; title=&quot;输入一个url地址到网页出来发生了什么?&quot;&gt;&lt;/a&gt;输入一个url地址到网页出来发生了什么?&lt;/h3&gt;&lt;ol
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react</title>
+    <link href="http://yoursite.com/2019/10/06/react/"/>
+    <id>http://yoursite.com/2019/10/06/react/</id>
+    <published>2019-10-06T08:34:20.000Z</published>
+    <updated>2019-10-06T08:34:44.028Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="React中keys的作用是什么"><a href="#React中keys的作用是什么" class="headerlink" title="React中keys的作用是什么?"></a>React中keys的作用是什么?</h3><ol><li>虚拟dom的唯一标识</li><li>可以提升效率</li><li>不建议使用index索引作为key，比如一个数组更新前：[1,2,3,4],索引依次是0，1，2，3</li><li>更新后数组为：[4,3,2,1],索引为0，1，2，3，这个时候react会检查每一个索引对应的值都不一样，这个时候就会把原有的删除重新创建，但是如果我们使用id作为标识，会发现这个时候只是元素的位置发生了移动，没有必要去重新删除在创建</li></ol><h3 id="React有什么特点"><a href="#React有什么特点" class="headerlink" title="React有什么特点?"></a>React有什么特点?</h3><ol><li>单向数据流</li><li>可以进行服务端渲染</li><li>使用的是虚拟DOM而不是真实DOM</li></ol><h3 id="为什么浏览器无法读取JSX"><a href="#为什么浏览器无法读取JSX" class="headerlink" title="为什么浏览器无法读取JSX?"></a>为什么浏览器无法读取JSX?</h3><ol><li>浏览器只能处理JavaScript对象，但是不能读取JS对象中的JSX</li><li>浏览器为了可以识别JSX语法，需要使用像babel这样的JSX转换器将JSX文件转为JavaScript对象，然后再将其传给浏览器</li></ol><h3 id="生命周期函数"><a href="#生命周期函数" class="headerlink" title="生命周期函数"></a>生命周期函数</h3><ol><li>加载阶段<ul><li>constructor</li><li>componentWillMount</li><li>render</li><li>componentDidMount</li></ul></li><li>更新阶段<ul><li>shouldComponentUpdate</li><li>componentWillUpdate</li><li>render</li><li>componentDidUpdate</li></ul></li><li>销毁阶段<ul><li>componentWillUnmount</li></ul></li><li>父组件的props属性值发生改变的时候<ul><li>componentWillReceiveProps</li></ul></li></ol><h3 id="react生命周期-16-8"><a href="#react生命周期-16-8" class="headerlink" title="react生命周期(16.8+)"></a>react生命周期(16.8+)</h3><ol><li>挂载阶段<ul><li>constructor // 初始化state</li><li>getDerevedStateFromProps // 接受到新的属性想要去修改state</li><li>render</li><li>componentDidMount</li></ul></li><li>更新阶段<ul><li>getDerivedStateFromProps // 在挂载和更新阶段都可能会调用</li><li>shouldComponentUpdate</li><li>render</li><li>getSnapsshotBeforeUpdate</li><li>componentDidUpdate</li></ul></li><li>卸载阶段<ul><li>componentWillUnmount</li></ul></li><li>注意，16.8+废弃了(并未删除)以下几个生命周期函数<ul><li>componentWillMount</li><li>componentWillReceiveProps</li><li>componentWillUpdate</li></ul></li></ol><h3 id="setState同步异步"><a href="#setState同步异步" class="headerlink" title="setState同步异步"></a>setState同步异步</h3><ol><li><p>异步</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 方法一</span><br><span class="line">setState((prvState, props) =&gt; &#123;</span><br><span class="line">// 第一个参数是修改前的state</span><br><span class="line">// 第二个参数是修改前的props</span><br><span class="line">&#125;, () =&gt; &#123;</span><br><span class="line">// 拿到执行后的最新结果</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 方法二</span><br><span class="line">setState(&#123;&#125;)</span><br></pre></td></tr></table></figure></li><li><p>在componentDidMount中调用setState之后，还会再次调用render方法进行渲染</p></li></ol><h3 id="react组件通信"><a href="#react组件通信" class="headerlink" title="react组件通信"></a>react组件通信</h3><ol><li>父组件调用子组件方法<ul><li>在子组件中定义方法fn</li><li>在调用子组件的标签中，加入ref属性，标记为child</li><li>在父组件的方法中，通过this.refs.child.childMethods()</li></ul></li><li>兄弟<ul><li>redux</li></ul></li></ol><h3 id="redux工作流"><a href="#redux工作流" class="headerlink" title="redux工作流"></a>redux工作流</h3><ol><li>redux有以下几个部分组成<ul><li>react component</li><li>action(creators)</li><li>store</li><li>reducers</li></ul></li><li>可以这样去分析redux这几个部分<ul><li>react component去图书馆借书的人</li><li>action比做借书人说的话</li><li>store就是图书馆管理员</li><li>reducers是记录图书信息的手册</li></ul></li><li>使用流程<ul><li>先要创建store，使用createStore</li><li>createStore需要一个参数，这个参数是reducers，因此需要创建reducers，export defult (state = stateDefault, action) =&gt; {}</li><li>在组件中使用时，需要先引入store，使用getState()获取store中state的数据</li><li>如果组件本身要想触发一个action，修改store中的数据，需要在组件中创建一个action，action = {type: ‘’, data: ‘’}，通过dispatch(action)通知store</li><li>store本身不做处理，会自动把传过来的action和prevState转发到reducers上，reducer处理完毕后，把处理完成的结果也就是新的state数据返回给store</li><li>组件要想及时获取最新的state，需要订阅，store.subscribe(this.handleFunc)，当拿到新的state时会先触发this.handleFunc函数</li></ul></li></ol><h3 id="区分有状态组件和无状态组件"><a href="#区分有状态组件和无状态组件" class="headerlink" title="区分有状态组件和无状态组件"></a>区分有状态组件和无状态组件</h3><ol><li>函数方式声明的组件是静态的，是不能动的，没有状态的</li><li>使用class类定义的组件可以自定义组件状态对象 state</li><li>render方法指的是组件如何渲染，只能返回一个react元素，而且只能返回一个react元素</li></ol><h3 id="react合成事件和原生事件"><a href="#react合成事件和原生事件" class="headerlink" title="react合成事件和原生事件"></a>react合成事件和原生事件</h3><ol><li>合成事件：react并不是将click直接绑定在dom上面，而是采用事件冒泡的形式冒泡到document上面</li><li>当事件触发的时候，使用统一的事件分发处理函数dispatchEvent将指定函数执行</li></ol><h3 id="什么是受控组件和非受控组件"><a href="#什么是受控组件和非受控组件" class="headerlink" title="什么是受控组件和非受控组件"></a>什么是受控组件和非受控组件</h3><ol><li>比如 <figure class="highlight plain"><figcaption><span>value</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">2. ```&lt;input /&gt;```这种没有value限制，随便输入</span><br><span class="line">3. 显然react中受控组件更好，因为react靠数据驱动，受数据控制</span><br><span class="line"></span><br><span class="line">### 什么是状态提升</span><br><span class="line">1. 在每个组件中可以通过setState修改自己组件状态，但是如何去修改其他的组件的状态?</span><br><span class="line">2. 每一个组件维护自己的state，难以修改别的组件的state</span><br><span class="line">3. 状态提升：就是将组件的状态提升到父组件中，然后组件共享父组件的状态</span><br><span class="line"></span><br><span class="line">### 高阶组件</span><br><span class="line">1. 本质上是一个函数</span><br></pre></td></tr></table></figure></li></ol><p>function HocComponent(wrappedComponent) {<br>    return class extends Component {<br>        render() {<br>            // 属性代理<br>            return &lt;wrappedComponent {…this.props} /&gt;<br>        }<br>    }<br>}</p><p>HocComponent(参数是一个组件(class)名称)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2. 提高代码复用性</span><br><span class="line">3. 通过ref获取组件实例</span><br></pre></td></tr></table></figure><p>class Text extends React.Component {<br>    say() {</p><pre><code>}render() {    return (        &lt;div&gt;hello&lt;/div&gt;    )}</code></pre><p>}<br>function HocComponent(wrappedComponent) {<br>    return class extends Component {<br>        proc(instance) {<br>            instance.say()<br>        }<br>        render() {<br>            return &lt;wrappedComponent {…this.props} ref={this.proc} /&gt;<br>        }<br>    }<br>}<br>const NewComponent = HocComponent(Text)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### ref</span><br><span class="line">1. 图片加载完后，获取图片的宽度和高度</span><br><span class="line">2. 建议这样使用</span><br></pre></td></tr></table></figure><p>componentDidMount() {<br>    // 拿到this.elem<br>}</p><div ref="{(div)" => {this.elem = div}}></div>```]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;React中keys的作用是什么&quot;&gt;&lt;a href=&quot;#React中keys的作用是什么&quot; class=&quot;headerlink&quot; title=&quot;React中keys的作用是什么?&quot;&gt;&lt;/a&gt;React中keys的作用是什么?&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;虚拟dom的
+      
+    
+    </summary>
+    
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>宏任务、微任务</title>
+    <link href="http://yoursite.com/2019/10/06/%E5%AE%8F%E4%BB%BB%E5%8A%A1%E5%BE%AE%E4%BB%BB%E5%8A%A1/"/>
+    <id>http://yoursite.com/2019/10/06/宏任务微任务/</id>
+    <published>2019-10-06T07:52:59.000Z</published>
+    <updated>2019-10-06T07:56:13.392Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;!-- 一道题简单谈宏任务和微任务 --&gt;</span><br><span class="line">&lt;!-- 宏任务 --&gt;</span><br><span class="line">&lt;!-- JS是单线程的，JS code在js主线程上执行的 --&gt;</span><br><span class="line">&lt;!-- 如果执行的过程中遇到了定时器，点击事件，ajax异步请求等，这个时候主线程先不执行它们，他们会进入事件队列中等待 --&gt;</span><br><span class="line">&lt;!-- 主线程执行完代码后，会立即去任务队列中查看有没有任务等待执行，如果有则会把他们提到主线程上执行 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- JS引擎规定了，setTimeout，setInterval，Ajax，click都属于宏任务 --&gt;</span><br><span class="line">&lt;!-- 规定了new Promise().then(callback)，proceed.nextTick()属于微任务 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 宏任务就是指宏任务队列中的任务 --&gt;</span><br><span class="line">&lt;!-- 微任务就是指微任务队列中的任务 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 宏任务队列不止一个，但是第一个宏任务队列只有一个任务等待主线程执行，当第一个宏任务队列全部执行完毕后，会立即查看是否存在微任务队列 --&gt;</span><br><span class="line">&lt;!-- 如果存在微任务队列，就会先把微任务队列中的任务全部执行完毕，注意微任务队列和宏任务队列有所不同，微任务队列只能有一个 --&gt;</span><br><span class="line">&lt;!-- 当微任务的任务全部执行完毕后，再去查看是否有其他的宏任务队列，如果有则继续执行 --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">console.log(&apos;start&apos;); // 1</span><br><span class="line">setTimeout(function() &#123;</span><br><span class="line">console.log(&apos;setTimeout&apos;); // 5</span><br><span class="line">&#125;, 0)</span><br><span class="line">new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">for(let i = 0; i &lt; 10; i++) &#123;</span><br><span class="line">console.log(i); // 2</span><br><span class="line">&#125;</span><br><span class="line">resolve(&apos;resolve&apos;)</span><br><span class="line">&#125;).then(data =&gt; &#123;</span><br><span class="line">console.log(data); // 4</span><br><span class="line">&#125;)</span><br><span class="line">console.log(&apos;end&apos;); // 3</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
+      
+    
+    </summary>
+    
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+  </entry>
   
   <entry>
     <title>mobx</title>
@@ -195,9 +267,9 @@
     
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
-      <category term="mock" scheme="http://yoursite.com/tags/mock/"/>
-    
       <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
+    
+      <category term="mock" scheme="http://yoursite.com/tags/mock/"/>
     
   </entry>
   
@@ -306,9 +378,9 @@
     </summary>
     
     
-      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
-    
       <category term="nuxt" scheme="http://yoursite.com/tags/nuxt/"/>
+    
+      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
     
   </entry>
   
