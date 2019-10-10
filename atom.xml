@@ -133,9 +133,9 @@
     </summary>
     
     
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
-    
       <category term="mobx" scheme="http://yoursite.com/tags/mobx/"/>
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
   </entry>
   
@@ -289,11 +289,11 @@
     </summary>
     
     
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
       <category term="mock" scheme="http://yoursite.com/tags/mock/"/>
     
       <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
-    
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
   </entry>
   
