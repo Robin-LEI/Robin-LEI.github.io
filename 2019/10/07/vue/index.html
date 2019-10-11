@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Robin LEI">
 <meta property="og:description" content="说说你对SPA单页面的理解？ single-page-application，只在页面初次渲染时加载HTML、JavaScript、CSS 优点：用户体验好–&amp;gt;无刷新加载页面，网站整体速度变快，避免了不必要得跳转和重复的渲染–&amp;gt;减轻了服务器端的压力，前后端架构更加清晰，前端负责交互逻辑，后端负责处理数据 缺点：首屏加载可能比较慢，不利于SEO–&amp;gt;因为所有的内容都在一个页面中动态的">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-07T03:03:45.013Z">
+<meta property="og:updated_time" content="2019-10-11T13:29:19.045Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue">
 <meta name="twitter:description" content="说说你对SPA单页面的理解？ single-page-application，只在页面初次渲染时加载HTML、JavaScript、CSS 优点：用户体验好–&amp;gt;无刷新加载页面，网站整体速度变快，避免了不必要得跳转和重复的渲染–&amp;gt;减轻了服务器端的压力，前后端架构更加清晰，前端负责交互逻辑，后端负责处理数据 缺点：首屏加载可能比较慢，不利于SEO–&amp;gt;因为所有的内容都在一个页面中动态的">
@@ -158,7 +158,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#说说你对SPA单页面的理解？"><span class="post-toc-number">1.</span> <span class="post-toc-text">说说你对SPA单页面的理解？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#v-if-and-v-show"><span class="post-toc-number">2.</span> <span class="post-toc-text">v-if and v-show</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#class与style如何动态绑定"><span class="post-toc-number">3.</span> <span class="post-toc-text">class与style如何动态绑定?</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#nextTick"><span class="post-toc-number">4.</span> <span class="post-toc-text">$nextTick</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MVC"><span class="post-toc-number">5.</span> <span class="post-toc-text">MVC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MVVM"><span class="post-toc-number">6.</span> <span class="post-toc-text">MVVM</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#虚拟dom"><span class="post-toc-number">7.</span> <span class="post-toc-text">虚拟dom</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#React-vs-Vue"><span class="post-toc-number">8.</span> <span class="post-toc-text">React vs Vue</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#说说你对SPA单页面的理解？"><span class="post-toc-number">1.</span> <span class="post-toc-text">说说你对SPA单页面的理解？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#v-if-and-v-show"><span class="post-toc-number">2.</span> <span class="post-toc-text">v-if and v-show</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#class与style如何动态绑定"><span class="post-toc-number">3.</span> <span class="post-toc-text">class与style如何动态绑定?</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#nextTick"><span class="post-toc-number">4.</span> <span class="post-toc-text">$nextTick</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MVC"><span class="post-toc-number">5.</span> <span class="post-toc-text">MVC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MVVM"><span class="post-toc-number">6.</span> <span class="post-toc-text">MVVM</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#虚拟dom"><span class="post-toc-number">7.</span> <span class="post-toc-text">虚拟dom</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#React-vs-Vue"><span class="post-toc-number">8.</span> <span class="post-toc-text">React vs Vue</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vue-cli的生成的项目目录和各个文件的作用"><span class="post-toc-number">9.</span> <span class="post-toc-text">vue-cli的生成的项目目录和各个文件的作用</span></a></li></ol>
         </nav>
     </aside>
 
@@ -281,6 +281,46 @@
 </ul>
 </li>
 </ol>
+<h3 id="vue-cli的生成的项目目录和各个文件的作用"><a href="#vue-cli的生成的项目目录和各个文件的作用" class="headerlink" title="vue-cli的生成的项目目录和各个文件的作用"></a>vue-cli的生成的项目目录和各个文件的作用</h3><ol>
+<li>build // webpack的配置文件<ul>
+<li>build.js // webpack的打包配置文件</li>
+<li>check-version.js // 检查node、npm版本</li>
+<li>utils.js // 项目的构建工具</li>
+<li>webpack.base.conf.js // webpack的公共配置</li>
+<li>webpack.dev.conf.js // 开发配置</li>
+<li>webpack.prod.conf.js // 生产配置</li>
+</ul>
+</li>
+<li>config // 变量的配置文件<ul>
+<li>index.js // 公共变量配置</li>
+<li>dev.env.js // 开发环境变量配置</li>
+<li>prod.env.js // 生产环境变量配置</li>
+</ul>
+</li>
+<li>node_modules // 包管理工具下载的依赖</li>
+<li>src // 项目的源代码<ul>
+<li>assets // 静态资源存放，如图片</li>
+<li>components // 项目的组件存放</li>
+<li>router // 路由</li>
+<li>App.vue // 项目的入口</li>
+<li>main.js // 程序的入口</li>
+</ul>
+</li>
+<li>test // 测试文件<ul>
+<li>e2e</li>
+<li>unit</li>
+</ul>
+</li>
+<li>.babelrc // 把es6代码进行编译配置文件</li>
+<li>.eslintrc // eslint的plugins、extends文件</li>
+<li>.eslintignore // 忽视eslint的配置文件</li>
+<li>.gitignore // 提交代码时忽视的文件</li>
+<li>.postcssrc // post css配置文件</li>
+<li>.editorconfig // 编辑器的配置文件</li>
+<li>package.json // 项目的信息、依赖的包</li>
+<li>index.html // 项目的首页</li>
+<li>static // 静态数据(资源)存放，比如json数据</li>
+</ol>
 
         </div>
 
@@ -289,7 +329,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-07T03:03:45.013Z" itemprop="dateUpdated">2019-10-07 11:03:45</time>
+    Last updated: <time datetime="2019-10-11T13:29:19.045Z" itemprop="dateUpdated">2019-10-11 21:29:19</time>
 </span><br>
 
 
