@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>js | Robin LEI | 用代码改变世界，因为喜欢所以热爱!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="js">
+    <meta name="description" content="数据类型 基本数据类型 Number、String、Boolean、Null、Undefined、Symbol 基本数据类型存储在栈内存中   引用数据类型 除了上述几种，剩下的都是引用数据类型 Array Object Function RegExp Date 引用数据类型存储在堆内存中    类型检测 typeof 经常用来检测一个变量是不是基础数据类型 不能用来检测引用数据类型 检测 nul">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js">
+<meta property="og:url" content="http://yoursite.com/2019/10/11/js/index.html">
+<meta property="og:site_name" content="Robin LEI">
+<meta property="og:description" content="数据类型 基本数据类型 Number、String、Boolean、Null、Undefined、Symbol 基本数据类型存储在栈内存中   引用数据类型 除了上述几种，剩下的都是引用数据类型 Array Object Function RegExp Date 引用数据类型存储在堆内存中    类型检测 typeof 经常用来检测一个变量是不是基础数据类型 不能用来检测引用数据类型 检测 nul">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://s2.ax1x.com/2019/10/14/KpR7gH.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/10/14/KpRjVP.md.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/10/14/KpRvUf.png">
+<meta property="og:updated_time" content="2019-10-14T15:10:38.126Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js">
+<meta name="twitter:description" content="数据类型 基本数据类型 Number、String、Boolean、Null、Undefined、Symbol 基本数据类型存储在栈内存中   引用数据类型 除了上述几种，剩下的都是引用数据类型 Array Object Function RegExp Date 引用数据类型存储在堆内存中    类型检测 typeof 经常用来检测一个变量是不是基础数据类型 不能用来检测引用数据类型 检测 nul">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/10/14/KpR7gH.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Robin LEI" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Robin LEI</h5>
+          <a href="mailto:13661603945@163.com" title="13661603945@163.com" class="mail">13661603945@163.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HomePage
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Robin-LEI" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://blog.csdn.net/weixin_42259266"  >
+                <i class="icon icon-lg icon-link"></i>
+                CSDN
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">js</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">js</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-10-11T14:04:05.000Z" itemprop="datePublished" class="page-time">
+  2019-10-11
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类型检测"><span class="post-toc-number">2.</span> <span class="post-toc-text">类型检测</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cooke、session、localStorage"><span class="post-toc-number">3.</span> <span class="post-toc-text">cooke、session、localStorage</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#null和undefined"><span class="post-toc-number">4.</span> <span class="post-toc-text">null和undefined</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数的prototype"><span class="post-toc-number">5.</span> <span class="post-toc-text">函数的prototype</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#显示原型"><span class="post-toc-number">6.</span> <span class="post-toc-text">显示原型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#隐式原型"><span class="post-toc-number">7.</span> <span class="post-toc-text">隐式原型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原型继承"><span class="post-toc-number">8.</span> <span class="post-toc-text">原型继承</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原型链属性"><span class="post-toc-number">9.</span> <span class="post-toc-text">原型链属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#instanceof"><span class="post-toc-number">10.</span> <span class="post-toc-text">instanceof</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#图解原型链"><span class="post-toc-number">11.</span> <span class="post-toc-text">图解原型链</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试题"><span class="post-toc-number">12.</span> <span class="post-toc-text">测试题</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-js"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">js</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-10-11 22:04:05" datetime="2019-10-11T14:04:05.000Z"  itemprop="datePublished">2019-10-11</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ol>
+<li>基本数据类型<ul>
+<li>Number、String、Boolean、Null、Undefined、Symbol</li>
+<li>基本数据类型存储在栈内存中</li>
+</ul>
+</li>
+<li>引用数据类型<ul>
+<li>除了上述几种，剩下的都是引用数据类型</li>
+<li>Array</li>
+<li>Object</li>
+<li>Function</li>
+<li>RegExp</li>
+<li>Date</li>
+<li>引用数据类型存储在堆内存中</li>
+</ul>
+</li>
+</ol>
+<h3 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h3><ol>
+<li>typeof<ul>
+<li>经常用来检测一个变量是不是基础数据类型</li>
+<li>不能用来检测引用数据类型</li>
+<li>检测 null，[]，/\d+/，{}，new Date()都是object</li>
+</ul>
+</li>
+<li>instanceof<ul>
+<li>检测一个构造函数的prototype属性是否存在于另一个要检测对象的原型链上</li>
+<li>比如 A instanceof B，就是要检测B.prototype是否存在于A对象的原型链上</li>
+<li>判断继承或者实例属于哪一个类型的时候比使用typeof更好用</li>
+<li>不能检测字面量方式创建的基本数据类型</li>
+<li>不能检测null和undefined</li>
+</ul>
+</li>
+<li>Object.prototype.toString.call()</li>
+</ol>
+<h3 id="cooke、session、localStorage"><a href="#cooke、session、localStorage" class="headerlink" title="cooke、session、localStorage"></a>cooke、session、localStorage</h3><ol>
+<li>localStorage<ul>
+<li>存储的数据是永久性的，除非用户手动删除，否则浏览器关闭后数据还是存在的</li>
+<li>其作用域是限定在文档源级别的，所谓的文档源是指通过协议、主机名、端口号来确定的</li>
+<li>同源的文档间共享localStorage</li>
+</ul>
+</li>
+<li>sessionStorage<ul>
+<li>关闭标签页，session清空</li>
+<li>关闭浏览器，session清空</li>
+</ul>
+</li>
+<li>二者的区别在于存储的有效期和作用域的不同，也就是说数据可以存储多长时间以及谁拥有数据的访问权</li>
+<li>cookie<ul>
+<li>默认的有效期很短暂，只能持续在web浏览器的会话期间，一旦用户关闭浏览器，cookie数据就会丢失</li>
+<li>关闭标签页，cookie不会丢失</li>
+<li>有的浏览器不允许保存超过300个cookie</li>
+<li>单个cookie保存的数据不能超过4kb</li>
+</ul>
+</li>
+</ol>
+<h3 id="null和undefined"><a href="#null和undefined" class="headerlink" title="null和undefined"></a>null和undefined</h3><ol>
+<li>null是JavaScript语言的关键字</li>
+<li>变量没有初始化、数组根据越界索引获取元素、对象属性不存在、函数没有返回值、没有提供函数实参的形参，这时候返回undefined</li>
+<li>JavaScript权威指南：你或许认为undefined是表示系统级的，出乎意料的错误，null表示正常的意料之中，当给一个变量赋值或者给一个函数传参时，使用null更好</li>
+</ol>
+<h3 id="函数的prototype"><a href="#函数的prototype" class="headerlink" title="函数的prototype"></a>函数的prototype</h3><ol>
+<li>每一个函数都有一个prototype属性，默认指向一个空object对象(实例对象)(原型对象)(但是Object不满足)，空对象是指没有我们的属性</li>
+<li>原型对象有一个constructor属性，指向其构造函数(函数对象)</li>
+<li>原型对象上的方法是给实例对象用的</li>
+<li>typeof Fn.prototype === ‘object’ // true</li>
+<li>函数对象是在函数定义的时候创建</li>
+<li>function Fn() {} // this.prototype = {}</li>
+<li>new Fn() // this.<strong>proto</strong> = Fn.prototype</li>
+<li>任何函数，不管是内置函数还是自定义的函数，都是new Function的实例，保活它本身(Function也是Function的实例)</li>
+<li>Object的原型对象是原型链的尽头，因为Object.prototype.<strong>proto</strong> === null</li>
+</ol>
+<h3 id="显示原型"><a href="#显示原型" class="headerlink" title="显示原型"></a>显示原型</h3><ol>
+<li>每个function都有一个prototype，就是显示原型(属性)</li>
+<li>Fn.prototype指向一个空对象，这个空对象是Object的实例</li>
+<li>代码一执行，Object对象就已经存在</li>
+</ol>
+<h3 id="隐式原型"><a href="#隐式原型" class="headerlink" title="隐式原型"></a>隐式原型</h3><ol>
+<li>每一个实例对象都有一个<strong>proto</strong>，称为隐式原型(属性)</li>
+<li>隐式原型的值就是等于其构造函数显示原型的值</li>
+</ol>
+<h3 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h3><ol>
+<li>构造函数的实例对象自动拥有构造函数原型对象上的属性(方法)</li>
+<li>利用的就是原型链</li>
+</ol>
+<h3 id="原型链属性"><a href="#原型链属性" class="headerlink" title="原型链属性"></a>原型链属性</h3><ol>
+<li>读取对象的属性时，会自动的到原型链上查找</li>
+<li>设置对象的属性时，不会查找原型链，如果当前对象没有此属性，直接添加此属性并且设置值</li>
+<li>方法一般定义再原型上，属性一般通过构造函数定义再对象本身</li>
+</ol>
+<h3 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h3><ol>
+<li><p>A instanceof B</p>
+</li>
+<li><p>如果B函数的显示原型对象在A对象的原型链上，返回true，否则返回false</p>
+</li>
+<li><p>A是实例对象</p>
+</li>
+<li><p>Object.prototype是原型链的终点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Object instanceof Function</span><br><span class="line">Object instanceof Obejct</span><br><span class="line">Function instanceof Function</span><br><span class="line">Function instanceof Obejct</span><br><span class="line"></span><br><span class="line">function Foo() &#123;&#125;</span><br><span class="line">Object instanceof Foo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>function Object() {}是new Function产生的</p>
+</li>
+<li><p>function Foo() {} . <strong>proto</strong> 指向Function.prototype</p>
+</li>
+</ol>
+<h3 id="图解原型链"><a href="#图解原型链" class="headerlink" title="图解原型链"></a>图解原型链</h3><ol>
+<li><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2019/10/14/KpR7gH.png" alt="图解1" title>
+                </div>
+                <div class="image-caption">图解1</div>
+            </figure></li>
+<li><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2019/10/14/KpRjVP.md.png" alt="图解2" title>
+                </div>
+                <div class="image-caption">图解2</div>
+            </figure></li>
+<li><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://s2.ax1x.com/2019/10/14/KpRvUf.png" alt="图解3" title>
+                </div>
+                <div class="image-caption">图解3</div>
+            </figure>
+
+</li>
+</ol>
+<h3 id="测试题"><a href="#测试题" class="headerlink" title="测试题"></a>测试题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">var A = function() &#123;</span><br><span class="line">&#125;</span><br><span class="line">A.prototype.n = 1</span><br><span class="line">var b = new A()</span><br><span class="line">A.prototype = &#123;</span><br><span class="line">	n: 2,</span><br><span class="line">	m: 3</span><br><span class="line">&#125;</span><br><span class="line">var c = new A()</span><br><span class="line">console.log(b.n, b.m, c.n, c.m)</span><br><span class="line"></span><br><span class="line">var F = function() &#123;&#125;</span><br><span class="line">Object.prototype.a = function() &#123;</span><br><span class="line">	console.log(&apos;a()&apos;)</span><br><span class="line">&#125;</span><br><span class="line">Function.prototype.b = function() &#123;</span><br><span class="line">	console.log(&apos;b()&apos;)</span><br><span class="line">&#125;</span><br><span class="line">var f = new F()</span><br><span class="line">f.a()</span><br><span class="line">f.b()</span><br><span class="line">F.a()</span><br><span class="line">F.b()</span><br></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-10-14T15:10:38.126Z" itemprop="dateUpdated">2019-10-14 23:10:38</time>
+</span><br>
+
+
+        
+        做自己喜欢做的事，无所谓输与赢，至少你赢了自己
+        
+    </div>
+    
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="Robin LEI">
+            Robin LEI
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/11/js/&title=《js》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/11/js/&title=《js》 — Robin LEI&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/11/js/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js》 — Robin LEI&url=http://yoursite.com/2019/10/11/js/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/11/js/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/10/07/vue/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Robin LEI &copy; 2015 - 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/11/js/&title=《js》 — Robin LEI&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/11/js/&title=《js》 — Robin LEI&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/11/js/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js》 — Robin LEI&url=http://yoursite.com/2019/10/11/js/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/11/js/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABuklEQVR42u3ay4qEMBAF0P7/n+6BWTUMpm/lUcpwshIx5ugi1COvVzzev+Pz+nOMZ/19Mpm7NHBxcZe57+EYc8dvG98f/4LLVXBxcRu5+eaVLHDFSuhfbLi4uA/jVp8Z38HFxf0f3DysWf9UXFzcJ3CTMCUpcOQBzfFcDRcXd4E7VzDde328vouLi7upK7G+qW1eHRcXt4WblzPydChPY6qhEi4ubg83D0Ry1hw9ObSBi4vbw51LQlYaqPnxjkshLi7uYW6ySeWHNefKqflcXFzcTu5colJeLAhivrwZFxe3kVsoVhbTofXi6WSFFRcXd5m7vkD1MEe1UIKLi9vPXTl0lbRGtqVMuLi4t3L3Fj3zRAgXF/c53ARRXbLaVonSKlxc3BZungLlDdEVbvQjcHFxD3Pz4GYlfKk2bi/fj4uL28itFi6TDejILFxc3EZutdWaJEj51lb4DFxc3BZudUPZmyCNn8lTLFxc3BPcuVbKSpukWqLFxcW9izsXjlQDnblQBhcX98ncuWJonnRFSREuLu4judWiag6Kyiu4uLiN3F0LVNHlH4SLi9vCraYfc8XQKg4XF/cm7g9ikJWM8Ehf+QAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'Robin!';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'Robin LEI!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
