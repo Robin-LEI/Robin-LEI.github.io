@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/14/KpR7gH.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/14/KpRjVP.md.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/10/14/KpRvUf.png">
-<meta property="og:updated_time" content="2019-10-14T15:10:38.126Z">
+<meta property="og:updated_time" content="2019-10-16T13:39:40.331Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js">
 <meta name="twitter:description" content="数据类型 基本数据类型 Number、String、Boolean、Null、Undefined、Symbol 基本数据类型存储在栈内存中   引用数据类型 除了上述几种，剩下的都是引用数据类型 Array Object Function RegExp Date 引用数据类型存储在堆内存中    类型检测 typeof 经常用来检测一个变量是不是基础数据类型 不能用来检测引用数据类型 检测 nul">
@@ -162,7 +162,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类型检测"><span class="post-toc-number">2.</span> <span class="post-toc-text">类型检测</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cooke、session、localStorage"><span class="post-toc-number">3.</span> <span class="post-toc-text">cooke、session、localStorage</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#null和undefined"><span class="post-toc-number">4.</span> <span class="post-toc-text">null和undefined</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数的prototype"><span class="post-toc-number">5.</span> <span class="post-toc-text">函数的prototype</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#显示原型"><span class="post-toc-number">6.</span> <span class="post-toc-text">显示原型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#隐式原型"><span class="post-toc-number">7.</span> <span class="post-toc-text">隐式原型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原型继承"><span class="post-toc-number">8.</span> <span class="post-toc-text">原型继承</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原型链属性"><span class="post-toc-number">9.</span> <span class="post-toc-text">原型链属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#instanceof"><span class="post-toc-number">10.</span> <span class="post-toc-text">instanceof</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#图解原型链"><span class="post-toc-number">11.</span> <span class="post-toc-text">图解原型链</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试题"><span class="post-toc-number">12.</span> <span class="post-toc-text">测试题</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据类型"><span class="post-toc-number">1.</span> <span class="post-toc-text">数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类型检测"><span class="post-toc-number">2.</span> <span class="post-toc-text">类型检测</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cooke、session、localStorage"><span class="post-toc-number">3.</span> <span class="post-toc-text">cooke、session、localStorage</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#null和undefined"><span class="post-toc-number">4.</span> <span class="post-toc-text">null和undefined</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数的prototype"><span class="post-toc-number">5.</span> <span class="post-toc-text">函数的prototype</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#显示原型"><span class="post-toc-number">6.</span> <span class="post-toc-text">显示原型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#隐式原型"><span class="post-toc-number">7.</span> <span class="post-toc-text">隐式原型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原型继承"><span class="post-toc-number">8.</span> <span class="post-toc-text">原型继承</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原型链属性"><span class="post-toc-number">9.</span> <span class="post-toc-text">原型链属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#instanceof"><span class="post-toc-number">10.</span> <span class="post-toc-text">instanceof</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#图解原型链"><span class="post-toc-number">11.</span> <span class="post-toc-text">图解原型链</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试题"><span class="post-toc-number">12.</span> <span class="post-toc-text">测试题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#变量提升与函数提升"><span class="post-toc-number">13.</span> <span class="post-toc-text">变量提升与函数提升</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行上下文"><span class="post-toc-number">14.</span> <span class="post-toc-text">执行上下文</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行上下文栈"><span class="post-toc-number">15.</span> <span class="post-toc-text">执行上下文栈</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常见内置对象"><span class="post-toc-number">16.</span> <span class="post-toc-text">常见内置对象</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#var-a-b-1和var-a-1-b-1有什么区别"><span class="post-toc-number">17.</span> <span class="post-toc-text">var a = b = 1和var a = 1, b = 1有什么区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#作用域与作用域链"><span class="post-toc-number">18.</span> <span class="post-toc-text">作用域与作用域链</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数柯里化"><span class="post-toc-number">19.</span> <span class="post-toc-text">函数柯里化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#this指向"><span class="post-toc-number">20.</span> <span class="post-toc-text">this指向</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#call、apply、bind"><span class="post-toc-number">21.</span> <span class="post-toc-text">call、apply、bind</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#new发生了什么"><span class="post-toc-number">22.</span> <span class="post-toc-text">new发生了什么</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#进程与线程"><span class="post-toc-number">23.</span> <span class="post-toc-text">进程与线程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#垃圾回收"><span class="post-toc-number">24.</span> <span class="post-toc-text">垃圾回收</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模块"><span class="post-toc-number">25.</span> <span class="post-toc-text">模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#valueOf与toString"><span class="post-toc-number">26.</span> <span class="post-toc-text">valueOf与toString</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文档碎片"><span class="post-toc-number">27.</span> <span class="post-toc-text">文档碎片</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#arguments"><span class="post-toc-number">28.</span> <span class="post-toc-text">arguments</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#类"><span class="post-toc-number">29.</span> <span class="post-toc-text">类</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Array"><span class="post-toc-number">30.</span> <span class="post-toc-text">Array</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Object"><span class="post-toc-number">31.</span> <span class="post-toc-text">Object</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Function"><span class="post-toc-number">32.</span> <span class="post-toc-text">Function</span></a></li></ol>
         </nav>
     </aside>
 
@@ -312,6 +312,60 @@
 </li>
 </ol>
 <h3 id="测试题"><a href="#测试题" class="headerlink" title="测试题"></a>测试题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">var A = function() &#123;</span><br><span class="line">&#125;</span><br><span class="line">A.prototype.n = 1</span><br><span class="line">var b = new A()</span><br><span class="line">A.prototype = &#123;</span><br><span class="line">	n: 2,</span><br><span class="line">	m: 3</span><br><span class="line">&#125;</span><br><span class="line">var c = new A()</span><br><span class="line">console.log(b.n, b.m, c.n, c.m)</span><br><span class="line"></span><br><span class="line">var F = function() &#123;&#125;</span><br><span class="line">Object.prototype.a = function() &#123;</span><br><span class="line">	console.log(&apos;a()&apos;)</span><br><span class="line">&#125;</span><br><span class="line">Function.prototype.b = function() &#123;</span><br><span class="line">	console.log(&apos;b()&apos;)</span><br><span class="line">&#125;</span><br><span class="line">var f = new F()</span><br><span class="line">f.a()</span><br><span class="line">f.b()</span><br><span class="line">F.a()</span><br><span class="line">F.b()</span><br></pre></td></tr></table></figure>
+
+<h3 id="变量提升与函数提升"><a href="#变量提升与函数提升" class="headerlink" title="变量提升与函数提升"></a>变量提升与函数提升</h3><ol>
+<li>变量声明提升<ul>
+<li>通过var定义(声明)的变量，在定义语句之前就可以访问到</li>
+<li>值：undefined</li>
+</ul>
+</li>
+<li>函数声明提升<ul>
+<li>通过function声明的函数，在之前就可以直接调用</li>
+<li>值：函数定义(对象)</li>
+</ul>
+</li>
+<li>变量提升和函数提升产生的原因?</li>
+</ol>
+<h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3><ol>
+<li>全局执行上下文<ul>
+<li>在执行全局代码前，已经将window确定为全局执行上下文</li>
+<li>对全局数据进行预处理<ul>
+<li>var声明的全局变量==&gt;undefined，添加为window属性</li>
+<li>function声明的全局函数==&gt;添加为window的方法</li>
+<li>this赋值为window</li>
+</ul>
+</li>
+<li>开始执行上下文</li>
+</ul>
+</li>
+<li>函数执行上下文<ul>
+<li>在调用函数，准备执行函数体之前，创建对应的函数执行上下文对象(虚拟的，存在于栈中)</li>
+<li>对局部数据进行预处理<ul>
+<li>形参变量==&gt;赋值(实参)==&gt;添加为执行上下文的属性</li>
+<li>arguments==&gt;赋值(实参列表)，添加为执行上下文的属性</li>
+<li>var==&gt;undefined</li>
+<li>function==&gt;赋值，添加为执行上下文的方法</li>
+<li>this==&gt;赋值(调用函数的对象)</li>
+</ul>
+</li>
+<li>开始执行函数体代码</li>
+</ul>
+</li>
+</ol>
+<h3 id="执行上下文栈"><a href="#执行上下文栈" class="headerlink" title="执行上下文栈"></a>执行上下文栈</h3><h3 id="常见内置对象"><a href="#常见内置对象" class="headerlink" title="常见内置对象"></a>常见内置对象</h3><ol>
+<li>Number</li>
+<li>Math</li>
+<li>Date</li>
+<li>RegExp</li>
+<li>String</li>
+<li>Array</li>
+<li>Object</li>
+<li>Function</li>
+<li>Error</li>
+</ol>
+<h3 id="var-a-b-1和var-a-1-b-1有什么区别"><a href="#var-a-b-1和var-a-1-b-1有什么区别" class="headerlink" title="var a = b = 1和var a = 1, b = 1有什么区别"></a>var a = b = 1和var a = 1, b = 1有什么区别</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// 1.</span><br><span class="line">function test() &#123;</span><br><span class="line">	var a = b = 1</span><br><span class="line">&#125;</span><br><span class="line">test()</span><br><span class="line">console.log(a); // a is not defined</span><br><span class="line">console.log(b); // 1</span><br><span class="line">/**</span><br><span class="line"> * var a = b = 1可以被拆分成：</span><br><span class="line"> * b = 1 // 这时候b是全局变量，因为没有用var声明</span><br><span class="line"> * var a = b // a是函数里面声明的局部变量，当函数执行完后，被释放了</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">// 2.</span><br><span class="line">function test() &#123;</span><br><span class="line">	var a = 1, b = 1 // a, b都是局部变量</span><br><span class="line">&#125;</span><br><span class="line">test()</span><br><span class="line">console.log(a); // a is not defined</span><br><span class="line">console.log(b); // b is not defined</span><br><span class="line"></span><br><span class="line">// 3.</span><br><span class="line">&quot;use strict&quot;;</span><br><span class="line">var a = b = 1 // 在严格模式下,变量必须先声明,在赋值,否则是不会进行转为全局变量的</span><br><span class="line">console.log(a, b); // b is not defined</span><br><span class="line"></span><br><span class="line">// 4.</span><br><span class="line">&quot;use strict&quot;;</span><br><span class="line">var a = 1, b = 1 </span><br><span class="line">console.log(a, b); // 1 1</span><br></pre></td></tr></table></figure>
+
+<h3 id="作用域与作用域链"><a href="#作用域与作用域链" class="headerlink" title="作用域与作用域链"></a>作用域与作用域链</h3><h3 id="函数柯里化"><a href="#函数柯里化" class="headerlink" title="函数柯里化"></a>函数柯里化</h3><h3 id="this指向"><a href="#this指向" class="headerlink" title="this指向"></a>this指向</h3><h3 id="call、apply、bind"><a href="#call、apply、bind" class="headerlink" title="call、apply、bind"></a>call、apply、bind</h3><h3 id="new发生了什么"><a href="#new发生了什么" class="headerlink" title="new发生了什么"></a>new发生了什么</h3><h3 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h3><h3 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h3><h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><h3 id="valueOf与toString"><a href="#valueOf与toString" class="headerlink" title="valueOf与toString"></a>valueOf与toString</h3><h3 id="文档碎片"><a href="#文档碎片" class="headerlink" title="文档碎片"></a>文档碎片</h3><h3 id="arguments"><a href="#arguments" class="headerlink" title="arguments"></a>arguments</h3><h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><h3 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h3><h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3>
         </div>
 
         <blockquote class="post-copyright">
@@ -319,7 +373,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-14T15:10:38.126Z" itemprop="dateUpdated">2019-10-14 23:10:38</time>
+    Last updated: <time datetime="2019-10-16T13:39:40.331Z" itemprop="dateUpdated">2019-10-16 21:39:40</time>
 </span><br>
 
 
