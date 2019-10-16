@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-16T13:39:40.331Z</updated>
+  <updated>2019-10-16T15:23:53.148Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>angular</title>
+    <link href="http://yoursite.com/2019/10/16/angular/"/>
+    <id>http://yoursite.com/2019/10/16/angular/</id>
+    <published>2019-10-16T15:10:13.000Z</published>
+    <updated>2019-10-16T15:23:53.148Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ol><li>npm i -g @angular/cli</li><li>ng -v</li><li>ng new project</li><li>ng serve –open</li><li>ie8不支持angular</li><li>ng new project –skip-install // 不会安装依赖</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;npm i -g @angular/cli&lt;/li&gt;
+&lt;li&gt;ng -v&lt;/li&gt;
+&lt;li&gt;ng new project&lt;/li
+      
+    
+    </summary>
+    
+    
+      <category term="angular" scheme="http://yoursite.com/tags/angular/"/>
+    
+  </entry>
   
   <entry>
     <title>js</title>
@@ -84,9 +110,9 @@
     </summary>
     
     
-      <category term="js" scheme="http://yoursite.com/tags/js/"/>
-    
       <category term="html" scheme="http://yoursite.com/tags/html/"/>
+    
+      <category term="js" scheme="http://yoursite.com/tags/js/"/>
     
   </entry>
   
@@ -158,9 +184,9 @@
     </summary>
     
     
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
-    
       <category term="mobx" scheme="http://yoursite.com/tags/mobx/"/>
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
   </entry>
   
@@ -314,11 +340,11 @@
     </summary>
     
     
-      <category term="mock" scheme="http://yoursite.com/tags/mock/"/>
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
       <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
     
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+      <category term="mock" scheme="http://yoursite.com/tags/mock/"/>
     
   </entry>
   
@@ -427,9 +453,9 @@
     </summary>
     
     
-      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
-    
       <category term="nuxt" scheme="http://yoursite.com/tags/nuxt/"/>
+    
+      <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
     
   </entry>
   
@@ -512,33 +538,6 @@
       <category term="canvas" scheme="http://yoursite.com/tags/canvas/"/>
     
       <category term="html5" scheme="http://yoursite.com/tags/html5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>yarn</title>
-    <link href="http://yoursite.com/2019/08/29/yarn/"/>
-    <id>http://yoursite.com/2019/08/29/yarn/</id>
-    <published>2019-08-29T13:39:30.000Z</published>
-    <updated>2019-08-29T15:03:43.214Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="带着问题学yarn？"><a href="#带着问题学yarn？" class="headerlink" title="带着问题学yarn？"></a>带着问题学yarn？</h3><ul><li>yarn是什么？</li><li>yarn有什么优点？</li><li>yarn可以做什么？</li><li>什么是一个package？</li><li>什么是一个包管理器？</li><li>公共包仓库是什么？</li><li>为什么需要包管理器？</li></ul><ol><li>package会进行缓存</li></ol><ul><li><p>npm i yarn -g</p></li><li><p>yarn -V</p></li><li><p>yarn init // 初始化一个package.json包</p></li><li><p>yarn add </p></li><li><p>yarn.lock // 存放各种包的信息</p></li><li><p>yarn upgrade webpack // 升级包</p></li><li><p>yarn cache ls // 查看本地安装了哪些缓存包</p></li><li><p>yarn cache dir // 查看package装在了本地什么路径</p></li><li><p>yarn cache clean // 清空本地缓存包</p></li><li><p>yarn add 已经缓存在本地的包 –offline // 离线安装</p></li><li><p>yarn install / yarn i / yarn // 安装项目依赖</p></li><li><p>dependences // 代码真正需要在浏览器上跑起来需要的一些依赖</p></li><li><p>devDependencies // 开发时需要的依赖</p></li><li><p>yarn remove [package] // 删除包</p></li><li><p>yarn install –production(prod) // 不会安装在devDependencies</p></li><li><p>yarn publish // publish a package to a package manager, the same as npm publish</p></li><li><p>yarn config</p></li><li><p>yarn config set registry registry.npm.taobao.org // 设置yarn安装源，提升安装包的时候的速度</p></li><li><p>yarn info [package] // 查看包的信息，可以时远程的包</p></li><li><p>yarn global add webpack // 把webpack安装在全局</p></li><li><p>yarn 不推荐把依赖包安装在全局，不清晰，在其他机器很难保证项目可以正确运行，放在package.json更加清晰明确</p></li><li><p>yarn self-upate // yarn的自我更新</p></li><li><p>yarn why [package] // 帮助寻找项目依赖,告诉我们为什么需要依赖</p></li><li><p>yarn check // 检查包的完整性</p></li><li><p>yarn run</p></li><li><p>example：create-dir：mkdir demo</p></li><li><p>rm-dir：rm -rf demo</p></li><li><p>yarn global ls // 查看全局安装的包</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;带着问题学yarn？&quot;&gt;&lt;a href=&quot;#带着问题学yarn？&quot; class=&quot;headerlink&quot; title=&quot;带着问题学yarn？&quot;&gt;&lt;/a&gt;带着问题学yarn？&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;yarn是什么？&lt;/li&gt;
-&lt;li&gt;yarn有什么优点？&lt;/li
-      
-    
-    </summary>
-    
-      <category term="包管理工具" scheme="http://yoursite.com/categories/%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="包管理工具" scheme="http://yoursite.com/tags/%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
