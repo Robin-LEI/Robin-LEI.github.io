@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Robin LEI">
 <meta property="og:description" content="说说你对SPA单页面的理解？ single-page-application，只在页面初次渲染时加载HTML、JavaScript、CSS 优点：用户体验好–&amp;gt;无刷新加载页面，网站整体速度变快，避免了不必要得跳转和重复的渲染–&amp;gt;减轻了服务器端的压力，前后端架构更加清晰，前端负责交互逻辑，后端负责处理数据 缺点：首屏加载可能比较慢，不利于SEO–&amp;gt;因为所有的内容都在一个页面中动态的">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-11T13:29:19.045Z">
+<meta property="og:updated_time" content="2019-10-16T15:07:54.626Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue">
 <meta name="twitter:description" content="说说你对SPA单页面的理解？ single-page-application，只在页面初次渲染时加载HTML、JavaScript、CSS 优点：用户体验好–&amp;gt;无刷新加载页面，网站整体速度变快，避免了不必要得跳转和重复的渲染–&amp;gt;减轻了服务器端的压力，前后端架构更加清晰，前端负责交互逻辑，后端负责处理数据 缺点：首屏加载可能比较慢，不利于SEO–&amp;gt;因为所有的内容都在一个页面中动态的">
@@ -158,7 +158,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#说说你对SPA单页面的理解？"><span class="post-toc-number">1.</span> <span class="post-toc-text">说说你对SPA单页面的理解？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#v-if-and-v-show"><span class="post-toc-number">2.</span> <span class="post-toc-text">v-if and v-show</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#class与style如何动态绑定"><span class="post-toc-number">3.</span> <span class="post-toc-text">class与style如何动态绑定?</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#nextTick"><span class="post-toc-number">4.</span> <span class="post-toc-text">$nextTick</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MVC"><span class="post-toc-number">5.</span> <span class="post-toc-text">MVC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MVVM"><span class="post-toc-number">6.</span> <span class="post-toc-text">MVVM</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#虚拟dom"><span class="post-toc-number">7.</span> <span class="post-toc-text">虚拟dom</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#React-vs-Vue"><span class="post-toc-number">8.</span> <span class="post-toc-text">React vs Vue</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vue-cli的生成的项目目录和各个文件的作用"><span class="post-toc-number">9.</span> <span class="post-toc-text">vue-cli的生成的项目目录和各个文件的作用</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#说说你对SPA单页面的理解？"><span class="post-toc-number">1.</span> <span class="post-toc-text">说说你对SPA单页面的理解？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#v-if-and-v-show"><span class="post-toc-number">2.</span> <span class="post-toc-text">v-if and v-show</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#class与style如何动态绑定"><span class="post-toc-number">3.</span> <span class="post-toc-text">class与style如何动态绑定?</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#nextTick"><span class="post-toc-number">4.</span> <span class="post-toc-text">$nextTick</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MVC"><span class="post-toc-number">5.</span> <span class="post-toc-text">MVC</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MVVM"><span class="post-toc-number">6.</span> <span class="post-toc-text">MVVM</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#虚拟dom"><span class="post-toc-number">7.</span> <span class="post-toc-text">虚拟dom</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#React-vs-Vue"><span class="post-toc-number">8.</span> <span class="post-toc-text">React vs Vue</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vue-cli的生成的项目目录和各个文件的作用"><span class="post-toc-number">9.</span> <span class="post-toc-text">vue-cli的生成的项目目录和各个文件的作用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#过滤器"><span class="post-toc-number">10.</span> <span class="post-toc-text">过滤器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#指令"><span class="post-toc-number">11.</span> <span class="post-toc-text">指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#框架和库的区别"><span class="post-toc-number">12.</span> <span class="post-toc-text">框架和库的区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组件化和模块化的区别"><span class="post-toc-number">13.</span> <span class="post-toc-text">组件化和模块化的区别</span></a></li></ol>
         </nav>
     </aside>
 
@@ -321,6 +321,22 @@
 <li>index.html // 项目的首页</li>
 <li>static // 静态数据(资源)存放，比如json数据</li>
 </ol>
+<h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ol>
+<li>在vue中，所有的指令在调用的时候，都以 v- 开头</li>
+<li>使用Vue.directive()定义全局指令 v-focus</li>
+<li>参数1，表示指令的名称，注意指令的名称不需要加v-，在调用的时候需要加</li>
+<li>参数2，表示指令的生命周期函数，在特定的时期会执行，执行相关的操作<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-focus /&gt;</span><br><span class="line">Vue.directive(&apos;focus&apos;, &#123;</span><br><span class="line">	bind: function(el) &#123;</span><br><span class="line">		// 每当指令绑定到原素身上的时候会执行这个函数，只执行一次</span><br><span class="line">		// 注意，在每个函数中，第一个参数都是el，表示绑定了该指令的元素，是一个原生dom对象</span><br><span class="line">		// 这时候，dom并没有绑定成功</span><br><span class="line">	&#125;,</span><br><span class="line">	inserted: function(el) &#123;</span><br><span class="line">		// 元素已经插入到dom</span><br><span class="line">		el.focus()</span><br><span class="line">	&#125;,</span><br><span class="line">	updated: function(el) &#123;</span><br><span class="line">		// 节点更新的时候执行</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 自定义一个设置字体颜色的指令</span><br><span class="line">&lt;input v-color /&gt;</span><br><span class="line">Vue.directive(&apos;color&apos;, &#123;</span><br><span class="line">	bind: function(el) &#123;</span><br><span class="line">		// 只要通过指令绑定了元素，不管这个元素有没有被嵌入到页面中，这个元素肯定有了一个内联的样式</span><br><span class="line">		el.style.color = &apos;red&apos;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 指令传值</span><br><span class="line">&lt;input v-color=&quot;&apos;blue&apos;&quot; /&gt;</span><br><span class="line">Vue.directive(&apos;color&apos;, &#123;</span><br><span class="line">	bind: function(el, binding) &#123;</span><br><span class="line">		el.style.color = binding.value</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">// 自定义指令</span><br><span class="line">new Vue(&#123;</span><br><span class="line">	directives: &#123;</span><br><span class="line">		&apos;focus&apos;: function(el) &#123;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="框架和库的区别"><a href="#框架和库的区别" class="headerlink" title="框架和库的区别"></a>框架和库的区别</h3><ol>
+<li>框架：是一套完整的解决方案，对项目的侵入性大，如果想要更换使用另一套框架，则需要重构整个项目</li>
+<li>库(插件)：对项目的侵入性较小，替换使用另外一个库时，不需要对项目进行较大的改动，提供某一个小功能</li>
+</ol>
+<h3 id="组件化和模块化的区别"><a href="#组件化和模块化的区别" class="headerlink" title="组件化和模块化的区别"></a>组件化和模块化的区别</h3><ol>
+<li>组件化：实现代码的复用，从UI界面的角度去划分</li>
+<li>模块化：从代码的逻辑进行划分，方便代码分层开发，保证每个功能模块的职能单一</li>
+</ol>
 
         </div>
 
@@ -329,7 +345,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-10-11T13:29:19.045Z" itemprop="dateUpdated">2019-10-11 21:29:19</time>
+    Last updated: <time datetime="2019-10-16T15:07:54.626Z" itemprop="dateUpdated">2019-10-16 23:07:54</time>
 </span><br>
 
 
