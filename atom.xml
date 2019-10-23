@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-17T13:42:41.696Z</updated>
+  <updated>2019-10-23T15:05:07.105Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,18 +21,17 @@
     <link href="http://yoursite.com/2019/10/16/angular/"/>
     <id>http://yoursite.com/2019/10/16/angular/</id>
     <published>2019-10-16T15:10:13.000Z</published>
-    <updated>2019-10-17T13:42:41.696Z</updated>
+    <updated>2019-10-23T15:05:07.105Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ol><li>npm i -g @angular/cli</li><li>ng -v</li><li>ng new project</li><li>ng serve –open</li><li>ie8不支持angular</li><li>ng new project –skip-install // 不会安装依赖</li></ol><h3 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h3><ol><li>ng g component 名称</li><li>ng g component components/new // 在app目录下，创建一个文件夹，文件夹下面创建一个new文件夹，里面时new的组件内容</li><li>之前传统网站，我们想把头部和底部等拆成单个文件来写，但是受困于当时技术，不容易实现，angular的组件帮助我们实现了这一梦想</li></ol>]]></content>
+    <content type="html"><![CDATA[<hr><p>title: angular<br>date: 2019-10-16 23:10:13</p><h2 id="tags-angular"><a href="#tags-angular" class="headerlink" title="tags: [angular]"></a>tags: [angular]</h2><h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ol><li>npm i -g @angular/cli</li><li>ng -v</li><li>ng new project</li><li>ng serve –open</li><li>ie8不支持angular</li><li>ng new project –skip-install // 不会安装依赖</li></ol><h3 id="创建组件"><a href="#创建组件" class="headerlink" title="创建组件"></a>创建组件</h3><ol><li>ng g component 名称</li><li>ng g component components/new // 在app目录下，创建一个文件夹，文件夹下面创建一个new文件夹，里面时new的组件内容</li><li>之前传统网站，我们想把头部和底部等拆成单个文件来写，但是受困于当时技术，不容易实现，angular的组件帮助我们实现了这一梦想</li></ol><h3 id="属性修饰符"><a href="#属性修饰符" class="headerlink" title="属性修饰符"></a>属性修饰符</h3><ol><li>public：在当前类、子类、类的外部类也可以访问</li><li>private：当前类</li><li>protected：当前类及其子类</li></ol><h3 id="属性绑定"><a href="#属性绑定" class="headerlink" title="属性绑定"></a>属性绑定</h3><div [title]="titleContent"></div><h3 id="html解析绑定"><a href="#html解析绑定" class="headerlink" title="html解析绑定"></a>html解析绑定</h3><div [innerhtml]="content"></div><h3 id="定义数组"><a href="#定义数组" class="headerlink" title="定义数组"></a>定义数组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 1.</span><br><span class="line">public list:any[] = [1,&apos;2&apos;]</span><br><span class="line"></span><br><span class="line">// 2.</span><br><span class="line">public list:Array&lt;any&gt; = [1,&apos;2&apos;]</span><br></pre></td></tr></table></figure><h3 id="数据循环"><a href="#数据循环" class="headerlink" title="数据循环"></a>数据循环</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">  &lt;li *ngFor=&quot;let item of lists;let key=index&quot;&gt;&#123;&#123;item.name&#125;&#125;----&#123;&#123;item.age&#125;&#125;&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure><h3 id="引入图片"><a href="#引入图片" class="headerlink" title="引入图片"></a>引入图片</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 加载本地图片</span><br><span class="line">&lt;img src=&quot;assets/images/test.png&quot; /&gt;</span><br><span class="line">// 加载远程图片</span><br><span class="line">&lt;img [src]=&quot;picUrl&quot; /&gt;</span><br></pre></td></tr></table></figure><h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><ol><li>*ngIf</li><li>*ngSwitch</li></ol><h3 id="ngClass"><a href="#ngClass" class="headerlink" title="ngClass"></a>ngClass</h3><ol><li><figure class="highlight plain"><figcaption><span>[ngClass]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### ngStyle</span><br><span class="line">1. ```&lt;span [ngStyle]=&quot;&#123;&apos;color&apos;: &apos;red&apos;&#125;&quot;&gt;&lt;/span&gt;</span><br></pre></td></tr></table></figure></li></ol><h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><ol><li><figure class="highlight plain"><figcaption><span>| date: 'yyyy-mm-dd'&#125;&#125;```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 事件</span><br><span class="line">1. ```&lt;button (click) = &quot;run()&quot;&gt;&lt;/button&gt;</span><br></pre></td></tr></table></figure></li><li><figure class="highlight plain"><figcaption><span>(keydown)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 双向数据绑定</span><br><span class="line">1. 只是针对表单</span><br><span class="line"></span><br><span class="line">### 服务</span><br><span class="line">1. 两个组件是不能进行通信的，A组件不能调用B组件的方法</span><br><span class="line">2. 如果我们要定义一个公共的方法，使得在A、B组件都能使用，我们需要把这个方法放在服务当中</span><br><span class="line">3. 创建服务</span><br></pre></td></tr></table></figure></li></ol><p>ng g service my-service<br>// 或者<br>ng g service services/test</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 生命周期函数</span><br><span class="line">1. ngOnInit()页面刷新会触发这个生命周期函数,组件和指令初始化完成，并不是dom加载完成</span><br><span class="line">2. ngAfterViewInit() // 视图加载完成以后触发，可以获取dom</span><br><span class="line"></span><br><span class="line">### 获取dom</span><br></pre></td></tr></table></figure><p>import { Component, OnInit, ViewChild } from ‘@angular/core’;</p><div #box>  这是一个div</div>@ViewChild('box', {static: true}) box:any;ngAfterViewInit(): void {  console.log(this.box.nativeElement)  this.box.nativeElement.style.width = '100px'  this.box.nativeElement.style.height = '100px'  this.box.nativeElement.style.background = 'red'  console.log(this.box.nativeElement.innerHTML)}```<h3 id="父组件调用子组件里面的方法"><a href="#父组件调用子组件里面的方法" class="headerlink" title="父组件调用子组件里面的方法"></a>父组件调用子组件里面的方法</h3><ol><li>@ViewChild</li></ol><h3 id="组件传值"><a href="#组件传值" class="headerlink" title="组件传值"></a>组件传值</h3><ol><li>父组件–&gt;子组件：使用Input装饰器,还可以把整个父组件的实例传递给子组件, [home]=”this”</li><li>子组件提供@output和EventEmitter给父组件传值</li><li>非父子组件的通信使用localstorage和服务</li></ol>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;npm i -g @angular/cli&lt;/li&gt;
-&lt;li&gt;ng -v&lt;/li&gt;
-&lt;li&gt;ng new project&lt;/li
+        &lt;hr&gt;
+&lt;p&gt;title: angular&lt;br&gt;date: 2019-10-16 23:10:13&lt;/p&gt;
+&lt;h2 id=&quot;tags-angular&quot;&gt;&lt;a href=&quot;#tags-angular&quot; class=&quot;headerlink&quot; title=&quot;tags: [angul
       
     
     </summary>
@@ -110,9 +109,9 @@
     </summary>
     
     
-      <category term="html" scheme="http://yoursite.com/tags/html/"/>
-    
       <category term="js" scheme="http://yoursite.com/tags/js/"/>
+    
+      <category term="html" scheme="http://yoursite.com/tags/html/"/>
     
   </entry>
   
@@ -184,9 +183,9 @@
     </summary>
     
     
-      <category term="mobx" scheme="http://yoursite.com/tags/mobx/"/>
-    
       <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+      <category term="mobx" scheme="http://yoursite.com/tags/mobx/"/>
     
   </entry>
   
@@ -340,11 +339,11 @@
     </summary>
     
     
-      <category term="react" scheme="http://yoursite.com/tags/react/"/>
-    
       <category term="mock" scheme="http://yoursite.com/tags/mock/"/>
     
       <category term="vue" scheme="http://yoursite.com/tags/vue/"/>
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
     
   </entry>
   
